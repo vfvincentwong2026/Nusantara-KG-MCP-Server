@@ -1,230 +1,153 @@
-# 数据模型详解
+# 数据模型详解（v2 · 2026-08 修订）
+
+> 本文档以 `obsidian-vault/05_Processes/` 下已录入的 23 个工艺节点为**事实标准**。
+> 所有新数据必须遵循本 schema；`templates/` 下的生成提示词已同步到本版本。
+
+---
 
 ## 📊 实体类型一览
 
-| 类型 | 文件名前缀 | 目录 | 说明 |
+| `type` | 目录 | 说明 | 当前数量 |
 | :--- | :--- | :--- | :--- |
-| `case` | 案例_ | `01_Cases/` | 真实落地项目 |
-| `style` | — | `02_Styles/` | 设计风格 |
-| `space` | — | `03_Spaces/` | 功能空间 |
-| `material` | 材料_ | `04_Materials/` | 建材 |
-| `process` | 工艺_ | `05_Processes/` | 施工工艺 |
-| `labor` | — | `06_Labor/` | 人工配置 |
-| `workhour` | 工时_ | `07_WorkHours/` | 工时定额 |
-| `effect` | 效果_ | `08_Effects/` | 效果矩阵 |
+| `process` | `05_Processes/` | 施工工艺 ⭐ 高端核心 | 23 ✅ |
+| `labor` | `06_Labor/` | 人工配置 ⭐ 印尼特色 | 0 📋 |
+| `workhour` | `07_WorkHours/` | 工时定额 ⭐ 工期管控 | 0 📋 |
+| `material` | `04_Materials/` | 建材 | 0 📋（Atelier 有 51 SKU，待映射） |
+| `case` | `01_Cases/` | 真实落地项目 | 事实源在 Atelier（25 案例） |
+| `style` | `02_Styles/` | 设计风格 | 0 📋 |
+| `space` | `03_Spaces/` | 功能空间 | 0 📋 |
+| `effect` | `08_Effects/` | 效果矩阵 | P1 后自动生成 |
 
 ---
 
-## 📝 完整字段定义
+## 📝 通用 Frontmatter 契约（所有实体）
 
-### Case (案例)
+```yaml
+---
+id: wet-method-tiling            # 唯一标识，kebab-case，全库唯一
+type: process                    # 实体类型，见上表
+category: 01_construction_process
+name:
+  en: Wet Method Tiling
+  zh: 湿铺法地砖铺贴
+summary:
+  en: <一句话英文摘要，含关键参数与适用场景>
+  zh: <一句话中文摘要>
+tags: [construction, tiling, wet-method, indonesia]
+domain: [Construction]
+hierarchy: Processes/Flooring/Wet-Method   # 分类路径
+pantheon: N/A
+relations:                       # 结构化关系（图谱编译的边）
+  - type: related_to
+    target: thin-set-method      # 目标节点 id（裸 id，不加 [[]]）
+  - type: recommended_for
+    target: living-room
+locations: [indonesia, java, bali]
+cultural_elements: []
+created_at: 2026-08-26
+updated_at: 2026-08-26
+status: published                # draft | published | verified
+---
+```
 
-```typescript
-interface Case {
-  id: string;                    // case_jakarta_selatan_01
-  name: {
-    en: string;                  // South Jakarta French Apartment
-    zh: string;                  // 雅加达南区法式公寓
-    id: string;                  // Apartemen Prancis Jakarta Selatan
-  };
-  style: string;                 // 关联风格 ID
-  location: string;              // 地区
-  total_area: number;            // 总面积 (m²)
-  budget: number;                // 总造价 (IDR)
-  spaces: string[];              // 关联空间 ID 列表
-  tags: string[];                // 标签
-  images: string[];              // 图片文件名列表
-  description: string;           // 项目描述 (Markdown)
-  highlights: string[];          // 设计亮点
-  materials: {                   // 材料配置
-    space: string;
-    material: string;
-    brand: string;
-    spec: string;
-  }[];
-  processes: string[];           // 关联工艺 ID 列表
-}
-Process (工艺)
-typescript
-interface Process {
-  id: string;                    // process_tiling_wet
-  name: {
-    en: string;                  // Wet Method Tiling
-    zh: string;                  // 湿铺法地砖铺贴
-    id: string;                  // Pemasangan Ubin Metode Basah
-  };
-  process_type: string;          // 铺贴 | 木工 | 油漆 | 水电
-  difficulty_level: 1-5;         // 难度等级
-  space_applicable: string[];    // 适用空间
-  material_applicable: string[]; // 适用材料
-  images: string[];
-  parameters: {                  // 工艺参数
-    thickness: { value: number; unit: string };
-    flatness_tolerance: { value: number; unit: string };
-    hollow_ratio_standard: string;
-  };
-  workflow: {                    // 工序流程
-    step: number;
-    description: string;
-    tools: string[];
-    checkpoint: string;
-    images: string[];
-  }[];
-  quality_check: string[];       // 验收标准
-  issues: {                      // 常见问题
-    problem: string;
-    cause: string;
-    solution: string;
-  }[];
-  relations: {                   // 关联关系
-    recommended_labor: string;   // 推荐人工
-    alternatives: string[];      // 替代工艺
-    related_materials: string[]; // 相关材料
-  };
-}
-Labor (人工)
-typescript
-interface Labor {
-  id: string;                    // labor_chinese_master
-  name: {
-    en: string;                  // Chinese Master Craftsman
-    zh: string;                  // 中国技工
-    id: string;                  // Tukang Ahli Tiongkok
-  };
-  level: string;                 // 高级 | 中级 | 普通
-  skills: string[];              // 擅长工艺/技能
-  daily_rate: {                  // 日薪
-    min: number;                 // IDR
-    max: number;                 // IDR
-  };
-  efficiency: {                  // 效率
-    per_10sqm: number;           // 每10平米工日
-    unit: string;
-  };
-  notes: string;                 // 备注
-  suitable_for: string[];        // 适用场景
-  not_suitable_for: string[];    // 不适用场景
-  comparison: {                  // 与其它人工对比
-    vs: string;
-    score: {                     // 1-5 评分
-      skill: number;
-      quality: number;
-      cost_efficiency: number;
-    };
-  }[];
-}
-WorkHour (工时)
-typescript
-interface WorkHour {
-  id: string;                    // workhour_tiling_wet
-  name: {
-    en: string;
-    zh: string;
-    id: string;
-  };
-  process: string;               // 关联工艺 ID
-  labor_level: string;           // 人工等级
-  value: number;                 // 工时值
-  unit: string;                  // 工时/m² | 工时/项
-  notes: string;                 // 备注/数据来源
-}
-Material (材料)
-typescript
-interface Material {
-  id: string;                    // material_marble_tile
-  name: {
-    en: string;                  // Marble Tile
-    zh: string;                  // 大理石瓷砖
-    id: string;                  // Ubin Marmer
-  };
-  category: string;              // 石材 | 木材 | 涂料 | 金属
-  specs: {                       // 规格
-    size: string;                // 120x60cm
-    thickness: string;           // 9mm
-    finish: string;              // 柔光 | 高光 | 哑光
-  };
-  brand: string;                 // 品牌
-  price: {                       // 价格
-    per_unit: number;            // IDR/片
-    per_m2: number;              // IDR/m²
-  };
-  properties: {                  // 特性
-    slip_resistance: string;     // 防滑性: 高/中/低
-    scratch_resistance: string;  // 耐刮性
-    maintenance: string;         // 维护说明
-    durability: string;          // 耐久性
-  };
-  visual_effect: string;         // 视觉效果描述
-  suitable_for: string[];        // 适用场景
-  images: string[];
-  suppliers: {                   // 供应商信息
-    name: string;
-    location: string;
-    contact: string;
-  }[];
-}
-🔗 关系定义
-关系类型表
-关系类型	源节点类型	目标节点类型	说明
-has_style	case	style	案例拥有某风格
-has_space	case/process	space	包含某空间/适用于某空间
-uses_material	case/process	material	使用某材料
-requires_process	material	process	材料需要某工艺施工
-recommends_labor	process	labor	工艺推荐某人工
-has_workhour	process	workhour	工艺有工时定额
-produces_effect	material × process	effect	材料×工艺产生某效果
-alternative_of	process/material	process/material	某实体的替代方案
-similar_to	case	case	案例之间的相似性
-关系权重
-typescript
-// 关系强度评分 (0-1)
-const RELATION_WEIGHTS = {
-  'has_style': 0.8,
-  'uses_material': 0.9,
-  'requires_process': 1.0,      // 强依赖
-  'recommends_labor': 0.7,
-  'alternative_of': 0.6,
-  'similar_to': 0.5,
-};
-📊 查询示例
-查询某个风格的所有案例
-cypher
-// Cypher 语法 (Neo4j 风格)
-MATCH (c:case)-[:has_style]->(s:style {id: '法式轻奢'})
-RETURN c.id, c.name, c.budget
-查询某个工艺所需的人工和工时
-cypher
-MATCH (p:process {id: 'process_tiling_wet'})
-MATCH (p)-[:recommends_labor]->(l:labor)
+**字段纪律**：
+
+- `relations[].target` 统一用**裸 id**（如 `thin-set-method`），不加 `[[]]`；正文内的双链才用 `[[id|显示名]]` 格式；
+- `status` 三态：`draft`（AI 初稿）→ `published`（已入库）→ `verified`（Owner 校对过全部 ⚠️ 数字）；
+- ⚠️ 标记：AI 生成的数字一律带 ⚠️，Owner 校对后删除 ⚠️ 并把 `status` 改为 `verified`；
+- 悬空链接：允许指向尚不存在的节点 id（Obsidian 显示为待建节点），后续批次补齐。
+
+## 🔗 关系类型词表（`relations[].type`）
+
+| 关系类型 | 源 → 目标 | 说明 |
+| :--- | :--- | :--- |
+| `related_to` | 任意 → 任意 | 通用关联 |
+| `recommended_for` | process → space | 推荐用于某空间 |
+| `mandatory_prerequisite_for` | process → process | 前置工序（如防水 → 贴砖） |
+| `requires_pretreatment` | process → process | 需要预处理 |
+| `stricter_than` | process → process/standard | 标准严于某基准 |
+| `mandatory_material` | process → material | 强制使用某材料 |
+| `vulnerable_to` | process → issue/risk | 易受某风险影响 |
+| `alternative_of` | process/material → 同类 | 平替方案 |
+| `recommends_labor` | process → labor | 推荐人工等级 |
+| `has_workhour` | process → workhour | 工时定额 |
+| `uses_material` | case/process → material | 使用某材料 |
+| `has_style` / `has_space` | case → style/space | 案例属性 |
+| `produces_effect` | material×process → effect | 产生某效果 |
+| `similar_to` | case → case | 案例相似 |
+
+## 📄 正文结构契约（process 类型）
+
+```markdown
+# <英文名> (<中文名>)
+
+## English (EN)
+### Overview
+### Process Parameters        ← 数字带 ⚠️
+### Step-by-Step Workflow     ← 6-10 步，每步含 Tools / Acceptance
+### Quality Control (QC) Standards   ← 表格
+### Common Issues & Prevention        ← 表格，≥4 行印尼工地真实高发问题
+### Related Knowledge (Labor & Materials)   ← [[id|显示名]] 双链
+
+## 中文 (ZH)
+### 概览 / 工艺参数 / 工序流程 / 验收标准 (QC) / 常见问题与避坑 / 关联知识
+（与 EN 镜像对应）
+
+## 知识关联 / Knowledge Relations
+（按 工艺与工法 / 材料与应用 / 人力资源 / 地理与环境 分组的双链列表）
+
+## 双链闭环结构 / Bi-Directional Link Closure
+\`\`\`text
+（核心节点的树状关系图，必须包在代码围栏内）
+\`\`\`
+
+## 索引与检索标签 / Indexing Tags
+- `tag1` ...
+```
+
+> ⚠️ **从网页版 AI 复制时，严禁带入 `text` / `复制` / `下载` 等 UI 按钮文字**——2026-08 已清理过一批。
+
+## 🧾 其他类型字段要点
+
+### Labor（人工）
+- frontmatter 增加：`level`（高级/中级/普通）、`skills: []`、`daily_rate: {min, max}`（IDR ⚠️）、`efficiency_per_10sqm` ⚠️
+- 正文必须含：适合工艺、工时与成本参考、与其他等级对比表（含斋月/节假日因素）、适用与不适用场景
+
+### WorkHour（工时）
+- frontmatter 增加：`process: <工艺id>`、`labor_level`、`value` ⚠️、`unit`（工时/m² | 工时/项）
+- 正文必须含：影响因素（斋月/雨季/难度折算）、数据来源说明
+
+### Material（材料）
+- frontmatter 增加：`category`、`specs`、`brand`、`price: {per_unit, per_m2}`（IDR ⚠️）
+- 正文必须含：印尼气候表现、施工要求（关联工艺双链）、供应商参考
+
+## 📊 查询示例（图谱编译后的逻辑视图）
+
+```cypher
+// 某工艺的前置工序与强制材料
+MATCH (p:process {id: 'wet-method-tiling'})
+OPTIONAL MATCH (pre:process)-[:mandatory_prerequisite_for]->(p)
+OPTIONAL MATCH (p)-[:mandatory_material]->(m:material)
+RETURN pre, m
+
+// 某工艺的人工与工时
+MATCH (p:process {id: 'wet-method-tiling'})-[:recommends_labor]->(l:labor)
 MATCH (p)-[:has_workhour]->(w:workhour)
 RETURN l.name, w.value, w.unit
-查询某个材料的完整施工方案
-cypher
-MATCH (m:material {id: 'material_marble_tile'})
-MATCH (m)-[:requires_process]->(p:process)
-MATCH (p)-[:recommends_labor]->(l:labor)
-MATCH (p)-[:has_workhour]->(w:workhour)
-RETURN p, l, w
-💡 扩展建议
-增加供应商节点：建立 supplier 类型，与 material 建立 supplies 关系
+```
 
-增加工具节点：建立 tool 类型，与 process 建立 uses_tool 关系
+## 💡 扩展方向
 
-增加项目阶段节点：建立 phase 类型，与 process 建立 belongs_to_phase 关系
-
-增加费用节点：建立 cost 类型，关联材料费/人工费/管理费
-
-text
+- `supplier` 供应商节点（与 material 建立 `supplies`）
+- `tool` 工具节点（与 process 建立 `uses_tool`）
+- `issue` 问题节点（把避坑表升级为可检索实体，`vulnerable_to` 已预留）
+- `cost` 费用节点（材料费/人工费/管理费拆解）
 
 ---
 
-以上 5 个文档构成了完整的项目文档体系：
-
-| 文档 | 用途 | 目标读者 |
-| :--- | :--- | :--- |
-| `README.md` | 项目首页/概览 | 所有人 |
-| `CONTRIBUTING.md` | 贡献指南 | 外部贡献者 |
-| `ARCHITECTURE.md` | 架构设计 | 开发者 |
-| `LOCAL_SETUP.md` | 本地开发 | 开发者 |
-| `DEPLOYMENT.md` | 部署指南 | 运维/DevOps |
-| `DATA_MODEL.md` | 数据模型 | 数据维护者 |
+| 文档 | 用途 |
+| :--- | :--- |
+| `README.md` | 项目概览 + 路线图 |
+| `DATA_MODEL.md` | 本文件，数据契约 |
+| `templates/00_使用指引.md` | AI 生成工作流 |
+| `templates/01-04` | 各类型生成提示词（已同步本 schema） |

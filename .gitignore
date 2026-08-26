@@ -1,0 +1,18 @@
+# Obsidian 本地配置（不同步）
+.obsidian/
+
+# Node
+node_modules/
+dist/
+
+# 编译输出
+data/nodes.json
+data/edges.json
+
+# 环境变量
+.env
+.env.local
+
+# 系统文件
+.DS_Store
+Thumbs.db

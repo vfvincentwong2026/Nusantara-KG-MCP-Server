@@ -171,7 +171,7 @@ obsidian-vault/
 | 材料 SKU | 51 | ✅ 已在 Atelier 仓库（`data/materials.json`） |
 | 设计风格 | 8 | 📋 待录入本仓库 |
 | 空间类型 | 12 | 📋 待录入本仓库 |
-| 工艺节点 | 1 | 🚧 P0 录入中（样例：`obsidian-vault/05_Processes/工艺_湿铺法贴砖.md`） |
+| 工艺节点 | 23 | ✅ 已录入（AI 生成 + 双语，⚠️ 数字待 Owner 校对 → verified） |
 | 人工节点 | 0 | 📋 P0 待录入 |
 | 工时定额 | 0 | 📋 P0 待录入 |
 | 效果矩阵 | 0 | 🔮 P1 后自动推理生成 |
