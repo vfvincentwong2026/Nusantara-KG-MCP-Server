@@ -1,17 +1,24 @@
 # 🌿 Nusantara-KG-MCP-Server
 
-> **印尼高端室内设计知识图谱 · 通过 MCP 协议赋能一切 AI 助手**
+> **印尼高端室内设计知识图谱 · 高端交付的决策大脑**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-8A2BE2)](https://modelcontextprotocol.io)
-[![Built with Obsidian](https://img.shields.io/badge/Built%20with-Obsidian-7C3AED)](https://obsidian.md)
-[![Deployed on Cloudflare](https://img.shields.io/badge/Deployed%20on-Cloudflare-F38020)](https://cloudflare.com)
+[![Data Source: Nusantara-Atelier](https://img.shields.io/badge/Data%20Source-Nusantara--Atelier-blue)](https://github.com/vfvincentwong2026/Nusantara-Atelier)
+[![Stage: P0 数据建设期](https://img.shields.io/badge/Stage-P0%20数据建设期-orange)](#-修订版路线图p0--p4)
+
+---
+
+## ⚡ 当前状态（先说实话）
+
+- 📦 **本仓库处于 P0 数据建设期**：MCP Server **代码尚未开工**，当前唯一动作是**录入知识数据**；
+- 📊 **案例/照片/材料数据已在 [Nusantara-Atelier](https://github.com/vfvincentwong2026/Nusantara-Atelier) 仓库**（25 案例 + 231 张实景图 + 51 个材料 SKU），本仓库以其为**唯一事实源**向上扩展工艺/工时/人工知识层；
+- ✍️ **数据录入不手敲**：用 `templates/` 下的 AI 生成提示词 + 免费大模型批量生成，人工只校对带 ⚠️ 的数字 → 见 [数据录入工作流](#️-数据录入工作流当前唯一动作)。
 
 ---
 
 ## 🎯 这是什么？
 
-**Nusantara-KG-MCP-Server** 是一个将 **印尼高端室内设计的全链路知识** —— 从设计美学、材料特性、施工工艺，到人工配置与工期管控 —— 结构化为知识图谱，并通过 **MCP (Model Context Protocol)** 协议对外提供服务的智能引擎。
+**Nusantara-KG-MCP-Server** 规划将 **印尼高端室内设计的全链路知识** —— 从设计美学、材料特性、施工工艺，到人工配置与工期管控 —— 结构化为知识图谱，并对外提供智能推理服务。
 
 **它不是普通的装修知识库，而是一个「高端交付」的决策大脑。**
 
@@ -31,20 +38,22 @@
 
 | 维度 | 内容 | 说明 |
 | :--- | :--- | :--- |
-| 🎨 **设计美学** | 8种风格 × 12类空间 × 25+真实案例 | 法式、现代、侘寂、意式极简…… |
+| 🎨 **设计美学** | 8种风格 × 12类空间 × 25 真实案例 | 法式、现代、侘寂、意式极简…… |
 | 🧱 **材料科学** | 特性、价格、效果、维护、适用场景 | 大理石/岩板/微水泥/艺术漆…… |
 | 🔧 **施工工艺** | 工序流程、验收标准、难度等级 | 从基层处理到面层收口的全链路 |
 | 👷 **人工配置** | 印尼普工/印尼技工/中国技工的工时与成本对比 | **高端落地质量的核心变量** |
 | 📐 **工时定额** | 每道工序每平方米的标准工时 | 精确排期、控制工期 |
-| 🖼️ **实景对照** | 231+张实景照片与工艺节点对应 | 效果图 vs 实景的「所见即所得」 |
+| 🖼️ **实景对照** | 231 张实景照片与工艺节点对应 | 效果图 vs 实景的「所见即所得」 |
+
+> 📌 案例与实景照片资产当前存放于 Atelier 仓库（`data/cases.json`、`apps/web/public/cases/`），本仓库工艺知识层将逐步与其建立映射。
 
 ---
 
-## 🧠 核心能力
+## 🧠 核心能力（目标）
 
 | 能力 | 说明 | 高端价值 |
 | :--- | :--- | :--- |
-| **精准估价** | 基于真实案例 + 工艺工时 + 人工等级 | 误差控制在5%以内，杜绝增项扯皮 |
+| **精准估价** | 基于真实案例 + 工艺工时 + 人工等级 | 误差控制在 5% 以内，杜绝增项扯皮 |
 | **人工配置建议** | 根据工艺难度推荐合适的工人等级 | 避免「印尼普工做中国工艺」的翻车事故 |
 | **工期推演** | 按工序拆解，精确到天的施工排期 | 让业主对交付时间有确定性的信心 |
 | **材料-工艺匹配** | 某材料必须配某工艺才能出效果 | 防止「用错工艺毁了好材料」 |
@@ -54,21 +63,20 @@
 
 ---
 
-## 📸 看图出方案 · 核心杀手锏
+## 📸 看图出方案 · 核心杀手锏（P3 阶段能力）
 
-这是本项目最具商业价值的功能。
+这是本项目最具商业价值的远期功能。
 
-用户上传一张参考图（小红书/Instagram/Pinterest），系统自动：
+```text
 上传图片 → 多模态识别 → 知识图谱匹配 → 推理计算 → 输出三件套
-│ │ │ │ │
-▼ ▼ ▼ ▼ ▼
-参考图 识别出: 匹配工艺节点: 计算: 📋 工艺做法清单
-(极简风) 悬浮吊顶 工艺_悬浮吊顶 材料费 💰 精确BOM报价
-无主灯 工艺_无主灯预埋 人工费 ⏱️ 施工工期表
-微水泥墙面 工艺_微水泥批刮 工时
-大板通铺 工艺_大板铺贴 工期排期
-
-text
+   │           │             │            │           │
+   ▼           ▼             ▼            ▼           ▼
+ 参考图    识别出:       匹配工艺节点:    计算:    📋 工艺做法清单
+(极简风)   悬浮吊顶      工艺_悬浮吊顶   材料费    💰 精确BOM报价
+          无主灯        工艺_无主灯预埋  人工费    ⏱️ 施工工期表
+          微水泥墙面    工艺_微水泥批刮  工时
+          大板通铺      工艺_大板铺贴    工期排期
+```
 
 **输出示例：**
 
@@ -82,48 +90,33 @@ text
 
 ---
 
-## 🔌 什么是 MCP？
-
-[MCP (Model Context Protocol)](https://modelcontextprotocol.io) 是 Anthropic 发起的开放协议，它让 AI 应用能够以标准化的方式连接外部工具和数据源。
-
-通过 MCP，这个知识图谱可以 **即插即用地接入任何支持 MCP 的 AI 生态**：
-
-- 🤖 Claude Desktop / 任何 LLM 应用
-- 💻 Cursor / VS Code 智能编程助手
-- 🌐 你的 Next.js 应用 (`Nusantara-Atelier`)
-- 📱 未来的 Indoscout 获客系统
-
----
-
 ## 🏗️ 知识模型 (Ontology)
 
-这个知识图谱的核心实体及其关系如下：
+```text
 ┌─────────────────────────────────────────────────────────────────┐
-│ 知识图谱实体模型 │
+│                        知识图谱实体模型                          │
 ├─────────────────────────────────────────────────────────────────┤
-│ │
-│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
-│ │ 案例 │────▶│ 风格 │ │ 空间 │ │
-│ │ (Case) │ │ (Style) │ │ (Space) │ │
-│ └────┬─────┘ └──────────┘ └────┬─────┘ │
-│ │ │ │
-│ │ 包含 │ 包含 │
-│ ▼ ▼ │
-│ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
-│ │ 材料 │◀────│ 工艺 │────▶│ 人工 │ │
-│ │(Material)│ │(Process) │ │ (Labor) │ │
-│ └────┬─────┘ └────┬─────┘ └──────────┘ │
-│ │ │ │
-│ │ 影响 │ 拆解为 │
-│ ▼ ▼ │
-│ ┌──────────┐ ┌──────────┐ │
-│ │ 效果 │ │ 工时 │ │
-│ │ (Effect)│ │(WorkHour)│ │
-│ └──────────┘ └──────────┘ │
-│ │
+│                                                                 │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐                 │
+│   │  案例    │───▶│  风格    │    │  空间    │                 │
+│   │  (Case)  │    │ (Style)  │    │ (Space)  │                 │
+│   └────┬─────┘    └──────────┘    └────┬─────┘                 │
+│        │                                │                       │
+│        │ 包含                           │ 包含                  │
+│        ▼                                ▼                       │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐                 │
+│   │  材料    │◀───│  工艺    │───▶│  人工    │                 │
+│   │(Material)│    │(Process) │    │ (Labor)  │                 │
+│   └────┬─────┘    └────┬─────┘    └──────────┘                 │
+│        │                │                                       │
+│        │ 影响           │ 拆解为                                │
+│        ▼                ▼                                       │
+│   ┌──────────┐    ┌──────────┐                                  │
+│   │  效果    │    │  工时    │                                  │
+│   │ (Effect) │    │(WorkHour)│                                  │
+│   └──────────┘    └──────────┘                                  │
 └─────────────────────────────────────────────────────────────────┘
-
-text
+```
 
 ### 实体详解
 
@@ -140,393 +133,190 @@ text
 
 ---
 
-## 🛠️ 技术栈
+## 🛠️ 技术栈（规划）
 
 | 层级 | 技术 |
 | :--- | :--- |
-| **数据策展** | Obsidian (Markdown + 双向链接 + 图片引用) |
+| **数据策展** | Markdown + YAML Frontmatter（Obsidian 兼容） |
+| **数据录入** | AI 生成模板 + 人工校对（见 `templates/`） |
 | **解析引擎** | Node.js / TypeScript |
 | **服务部署** | Cloudflare Workers + D1 + R2 |
-| **协议标准** | MCP (Model Context Protocol) |
-| **传输方式** | SSE (Server-Sent Events) |
-| **多模态识别** | GPT-4o / Claude Vision (通过 API 调用) |
-| **依赖管理** | npm / yarn |
+| **协议标准** | MCP (Model Context Protocol)，P3 阶段薄封装 |
+| **多模态识别** | GPT-4o / Claude Vision（P3 阶段） |
 
 ---
 
 ## 📂 数据目录结构
+
+```text
 obsidian-vault/
-├── 01_Cases/ # 真实落地案例 (25+)
-│ └── 案例_雅加达南区_法式公寓.md
-│
-├── 02_Styles/ # 设计风格 (8种)
-│ ├── 法式轻奢.md
-│ ├── 意式极简.md
-│ └── 侘寂风.md
-│
-├── 03_Spaces/ # 空间类型 (12类)
-│ ├── 客厅.md
-│ ├── 卧室.md
-│ └── 厨房.md
-│
-├── 04_Materials/ # 材料库 (持续扩充)
-│ ├── 大理石瓷砖.md
-│ ├── 微水泥.md
-│ └── 艺术漆.md
-│
-├── 05_Processes/ # 施工工艺 ⭐ 高端核心
-│ ├── 工艺_湿铺法贴砖.md
-│ ├── 工艺_冲筋找平.md
-│ └── 工艺_弧形吊顶.md
-│
-├── 06_Labor/ # 人工配置 ⭐ 印尼特色
-│ ├── 印尼本地普工.md
-│ ├── 印尼本地技工.md
-│ └── 中国技工.md
-│
-├── 07_WorkHours/ # 工时定额 ⭐ 工期管控
-│ └── 工时_贴砖_湿铺法.md
-│
-└── 08_Effects/ # 效果矩阵
-└── 效果_抛光砖_湿铺法.md
-
-text
+├── 01_Cases/        # 真实落地案例（事实源在 Atelier 仓库）
+├── 02_Styles/       # 设计风格 (8种)
+├── 03_Spaces/       # 空间类型 (12类)
+├── 04_Materials/    # 材料库
+├── 05_Processes/    # 施工工艺 ⭐ 高端核心（P0 录入中）
+├── 06_Labor/        # 人工配置 ⭐ 印尼特色（P0 待录入）
+├── 07_WorkHours/    # 工时定额 ⭐ 工期管控（P0 待录入）
+└── 08_Effects/      # 效果矩阵（P1 后自动生成）
+```
 
 ---
 
-## 📝 数据策展规范 (Obsidian)
+## 📊 数据现状（2026-08 核实）
 
-### 案例文件示例
-
-`01_Cases/案例_雅加达南区_法式公寓.md`
-
-```markdown
----
-id: case_jakarta_selatan_01
-name:
-  en: "South Jakarta French Apartment"
-  zh: "雅加达南区法式公寓"
-  id: "Apartemen Prancis Jakarta Selatan"
-
-style: [[法式轻奢]]
-location: "雅加达南区"
-total_area: 120
-budget: 350,000,000
-spaces: [[客厅]] [[卧室]] [[厨房]] [[卫浴]]
-
-tags: ["三居室", "公寓", "高层", "精装交付"]
-
-images:
-  - "case_jkt_01_overview.jpg"
-  - "case_jkt_01_living.jpg"
----
-
-## 项目概述
-120平米高层公寓，位于雅加达南区核心地段。业主为年轻华人家庭，偏好法式轻奢的浪漫与精致。
-
-## 设计亮点
-- 客餐一体化布局，以弧形线条弱化横梁
-- 主卧套房设计，步入式衣帽间
-- 厨房采用半开放式，岛台+社交餐区
-
-## 材料配置
-- 地面: [[大理石瓷砖]] (品牌: XXX, 规格: 120x60cm, 柔光面)
-- 墙面: [[艺术漆]] (品牌: YYY, 颜色: 奶油白)
-- 木作: [[胡桃木贴皮]] (定制柜体)
-
-## 关键工艺
-- [[工艺_冲筋找平]] → 保证墙面垂平，艺术漆施工基础
-- [[工艺_湿铺法贴砖]] → 大板砖铺贴，中国技工施工
-- [[工艺_弧形吊顶]] → 木工板基础 + 石膏板饰面
-
-## 实景照片
-![[case_jkt_01_living.jpg]]
-![[case_jkt_01_kitchen.jpg]]
-工艺文件示例 ⭐ 核心亮点
-05_Processes/工艺_湿铺法贴砖.md
-
-markdown
----
-id: process_tiling_wet
-name:
-  en: "Wet Method Tiling"
-  zh: "湿铺法地砖铺贴"
-  id: "Pemasangan Ubin Metode Basah"
-
-process_type: "铺贴"
-difficulty_level: 4                    # 1-5，5为最难
-space_applicable: [[客厅]] [[厨房]] [[卫浴]]
-material_applicable: [[大理石瓷砖]] [[仿古砖]] [[岩板]]
-
-images:
-  - "process_tiling_01.jpg"
-  - "process_tiling_02_step.jpg"
-  - "process_tiling_03_finish.jpg"
----
-
-## 工艺参数
-thickness: 30-50mm
-flatness_tolerance: 3mm/2m
-hollow_ratio_standard: "< 3%"          # 高端标准严于国标
-
-## 工序流程
-
-### Step 1: 基层处理
-**描述**：清理浮灰、油污，洒水湿润基层
-**工具**：扫把、拖把、水管
-**验收**：基层无明水、无浮灰
-
-### Step 2: 1:3水泥砂浆找平
-**描述**：水泥砂浆按1:3配比搅拌，铺设厚度30-50mm
-**工具**：铁锹、抹子、2m靠尺
-**验收**：平整度误差 < 3mm/2m
-
-### Step 3: 瓷砖背面刮浆
-**描述**：瓷砖背面涂抹纯水泥膏，使用齿形刮板拉槽
-**工具**：齿形刮板 (10mm齿距)、抹子
-**注意**：刮浆必须饱满，边角不得遗漏
-
-### Step 4: 铺贴与振实
-**描述**：将瓷砖铺设在砂浆层上，用橡皮锤振实
-**工具**：橡皮锤、水平尺、激光水平仪
-**验收**：四角平整，相邻砖高差 < 0.5mm
-
-### Step 5: 调平器固定
-**描述**：使用调平器系统固定缝隙，防止移位
-**工具**：调平器、调平钳
-**关键**：调平器是防止空鼓的关键工艺
-
-### Step 6: 勾缝/美缝
-**描述**：24-48小时后，清理缝隙，填充美缝剂
-**工具**：美缝枪、压缝球、铲刀
-
-## 验收标准 (QC)
-- ✅ 空鼓率: 单块砖边角空鼓 < 3%，主要通道严禁空鼓
-- ✅ 平整度: 2m靠尺检查，缝隙 < 1mm
-- ✅ 坡度: 卫生间地漏处做坡度，倒水测试流畅无积水
-- ✅ 缝宽: 1.5mm-2.5mm 均匀一致
-- ✅ 颜色: 美缝颜色与砖色一致或协调
-
-## 常见问题与避坑
-| 问题 | 原因 | 解决方案 |
+| 实体类型 | 数量 | 真实状态 |
 | :--- | :--- | :--- |
-| 空鼓 | 基层未湿润/砂浆不饱满 | 铺贴前洒水湿润，刮浆饱满 |
-| 不平整 | 未使用调平器 | 强制使用调平器系统 |
-| 接缝高低差 | 砖变形/铺贴不实 | 选砖时挑平整度好的，铺贴时用橡皮锤振实 |
-| 泛碱 (白华) | 水泥碱分渗出 | 使用防碱背涂剂，或选用瓷砖胶薄贴法 |
+| 真实案例 | 25 | ✅ 已在 Atelier 仓库（`data/cases.json`，含房间级三语标注） |
+| 实景照片 | 231 | ✅ 已在 Atelier 仓库（`apps/web/public/cases/`，未上 R2） |
+| 材料 SKU | 51 | ✅ 已在 Atelier 仓库（`data/materials.json`） |
+| 设计风格 | 8 | 📋 待录入本仓库 |
+| 空间类型 | 12 | 📋 待录入本仓库 |
+| 工艺节点 | 1 | 🚧 P0 录入中（样例：`obsidian-vault/05_Processes/工艺_湿铺法贴砖.md`） |
+| 人工节点 | 0 | 📋 P0 待录入 |
+| 工时定额 | 0 | 📋 P0 待录入 |
+| 效果矩阵 | 0 | 🔮 P1 后自动推理生成 |
 
-## 关联知识
-- 推荐人工: [[中国技工]] (大板砖/岩板必须中国技工)
-- 替代方案: [[工艺_薄贴法贴砖]] (适用于小规格砖)
-- 相关材料: [[大理石瓷砖]], [[岩板]]
-人工文件示例 ⭐ 印尼特色
-06_Labor/中国技工.md
-
-markdown
----
-id: labor_chinese_master
-name:
-  en: "Chinese Master Craftsman"
-  zh: "中国技工"
-  id: "Tukang Ahli Tiongkok"
-
-level: "高级"                      # 高级/中级/普通
-skills: ["大板铺贴", "岩板无缝拼接", "精细收口", "极简工艺"]
-
-images:
-  - "labor_chinese_01.jpg"
 ---
 
-## 适合工艺
-- [[工艺_湿铺法贴砖]] (针对1.2m以上大板/岩板)
-- [[工艺_冲筋找平]] (要求垂平度极高的场景)
-- [[工艺_弧形吊顶]] (复杂造型)
-- [[工艺_微水泥施工]]
+## ✍️ 数据录入工作流（当前唯一动作）
 
-## 工时与成本参考
-daily_rate: 450,000 - 650,000 IDR
-efficiency_per_10sqm: 1.5 工日
-notes: "慢工出细活，日薪虽贵，但返工率极低，总体成本最优"
+不手敲数据：用 `templates/` 目录下的 AI 生成提示词 + 免费大模型（如 Kimi）批量生成，人工只校对带 ⚠️ 的数字。
 
-## 与本地技工对比
-| 对比维度 | 中国技工 | 印尼本地技工 |
+```text
+① 复制模板提示词  →  ② 粘贴到免费模型，替换【主题】  →  ③ 校对 ⚠️ 数字  →  ④ 存盘提交
+   (templates/01-04)     (Kimi / 任何免费模型)             (5 分钟/篇)         (.md → push)
+```
+
+| 模板 | 生成内容 | 目标目录 |
 | :--- | :--- | :--- |
-| 日薪 | 450k-650k IDR | 200k-300k IDR |
-| 大板铺贴 | ⭐⭐⭐⭐⭐ | ⭐⭐ |
-| 收口精细度 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| 沟通成本 | 需翻译/图纸沟通 | 本地语言无障碍 |
-| 工期 | 稳定可控 | 斋月/节假日可能延误 |
+| `templates/01_工艺节点生成提示词.md` | 施工工艺（最高优先级） | `obsidian-vault/05_Processes/` |
+| `templates/02_工时定额生成提示词.md` | 工时定额 × 3 级人工 | `obsidian-vault/07_WorkHours/` |
+| `templates/03_人工对比生成提示词.md` | 人工等级档案 | `obsidian-vault/06_Labor/` |
+| `templates/04_材料节点生成提示词.md` | 材料档案 | `obsidian-vault/04_Materials/` |
 
-## 适用场景
-- ✅ 极简风格 (追求无缝、无踢脚线)
-- ✅ 大规格材料 (1.2m x 2.4m 岩板背景墙)
-- ✅ 复杂造型 (弧形、异形)
-- ✅ 业主对落地效果有极高要求
+**P0 最小可用集**（详见 `templates/00_使用指引.md`）：
 
-## 不适用场景
-- ❌ 普通规格砖 (800x800mm以下) → 用本地技工性价比更高
-- ❌ 简单的刮白/找平 → 本地普工即可胜任
-- ❌ 工期极紧的项目 → 中国技工通常排期较满
-📦 MCP Tools 清单
-Tool Name	功能描述	输入参数	输出
-quick_estimate	快速估价 (主项目调用)	style, area, spaces, location	价格区间 + 相似案例
-query_case_by_style	按风格/空间/地区查询匹配案例	style, space, location	案例列表 + 实景图 + 造价
-analyze_design_photo ⭐	上传参考图，识别元素并生成工艺+报价+工期	image_url, area, location	工艺清单 + BOM报价 + 工期表
-precise_estimate	精确报价 (设计师后台)	processes, area, labor_level	BOM明细 + 人工拆解
-recommend_labor	根据工艺推荐人工配置	process_ids	人工等级 + 日薪 + 工时
-calculate_timeline	按工序拆解工期	processes, area, labor_level	甘特图式排期
-match_material_to_process	推荐材料×工艺的最佳组合	material_id 或 process_id	组合方案 + 效果预测
-compare_labor	对比同一工艺下不同人工的效果与成本	process_id, labor_levels	成本/工期/质量对比表
-resolve_issue	施工问题诊断与解决方案	process_id, issue_description	原因分析 + 解决步骤
-match_designer	根据项目需求匹配设计师	style, area, special_requirements	设计师列表 + 匹配分数
-🤝 与主项目的关系
-项目	角色	地址
-Nusantara-Atelier	面向客户的展示网站 / 获客入口	GitHub Link
-Nusantara-KG-MCP-Server	智能推理引擎 / MCP 服务 (本仓库)	当前仓库
-协作模式
-text
-┌─────────────────────────────────────────────────────────────────┐
-│                    Nusantara-Atelier (前端展示)                 │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐         │
-│  │ 首页估价 │  │ AI识图  │  │ 案例详情 │  │ 设计师选 │         │
-│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘         │
-└───────┼────────────┼────────────┼────────────┼────────────────┘
-        │            │            │            │
-        │  通过 MCP 协议通信 (SSE/HTTP)          │
-        │            │            │            │
-        ▼            ▼            ▼            ▼
-┌─────────────────────────────────────────────────────────────────┐
-│              Nusantara-KG-MCP-Server (智能引擎)                 │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  MCP Tools:                                             │    │
-│  │  • quick_estimate       主项目快速估价                 │    │
-│  │  • analyze_design_photo 识图分析  ← 核心杀手锏        │    │
-│  │  • match_designer       设计师匹配                     │    │
-│  │  • precise_estimate     精确报价 (设计师后台)          │    │
-│  │  • calculate_timeline   工期推演                       │    │
-│  │  • resolve_issue        问题诊断                       │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                  │
-│                              ▼                                  │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  Cloudflare D1 + R2 (知识图谱数据 + 图片存储)          │    │
-│  │  • nodes.json (实体)                                   │    │
-│  │  • edges.json (关系)                                   │    │
-│  │  • images/ (工艺图/案例图/材料图)                      │    │
-│  └─────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘
-📊 当前知识图谱规模
-实体类型	数量	状态
-真实案例	25+	✅ 已录入
-实景照片	231+	✅ 已上传 R2
-设计风格	8	✅ 已定义
-空间类型	12	✅ 已定义
-材料节点	50+	🚧 扩充中
-工艺节点	20+	🚧 核心工艺优先
-人工节点	3-5	✅ 印尼/中国对比
-工时定额	20+	🚧 逐步录入
-效果矩阵	持续生成	🔮 自动推理中
-🚀 快速开始
-1️⃣ 克隆仓库
-bash
+1. 5 个核心工艺：大板/岩板铺贴、微水泥墙面、悬浮吊顶、冲筋找平、无主灯预埋
+2. 对应工时定额（× 3 级人工）
+3. 3 份人工档案：印尼普工 / 印尼技工 / 中国技工
+
+> ⚠️ **纪律：数字不信 AI。** AI 生成的工序描述质量很高，但工时、日薪、价格必须以真实项目经验校对为准——这正是本知识库的护城河。
+
+---
+
+## 🗺️ 修订版路线图（P0 → P4）
+
+| 阶段 | 目标 | 状态 |
+| :--- | :--- | :--- |
+| **P0** | 数据录入：5 核心工艺 + 工时定额 + 3 级人工档案（AI 模板生成 + 人工校对） | 🚧 进行中 |
+| **P1** | Atelier 内部估价能力：`quick_estimate` / `precise_estimate` 以库/内部 API 形式落地，验证估价误差 | 📋 待 P0 完成 |
+| **P2** | 抽离独立 Cloudflare Worker，供 Atelier / IndoScout / Villa 共同调用 | 📋 规划中 |
+| **P3** | MCP 协议薄封装 + 多模态识图 `analyze_design_photo`，仅在出现真实外部接入需求时启动 | 🔮 暂缓 |
+| **P4** | 对外开放订阅 | 🔮 未来 |
+
+**路线修订说明**（相对旧版 Phase 1-6）：
+
+- 旧版把 MCP Server 开发排在 Phase 3，先于数据成型——已修正为**数据先行**；
+- Atelier 与本项目同栈（Next.js + Cloudflare），P1 阶段内部调用不需要 MCP/SSE，**MCP 封装推迟到 P3**；
+- 多模态识图（看图出方案）依赖 Vision API 付费调用，推迟到 P3 与 MCP 同期评估。
+
+---
+
+## 🔌 MCP 工具规划（P3 阶段实现）
+
+| Tool Name | 功能描述 | 输入参数 | 输出 |
+| :--- | :--- | :--- | :--- |
+| `quick_estimate` | 快速估价（主项目调用） | style, area, spaces, location | 价格区间 + 相似案例 |
+| `query_case_by_style` | 按风格/空间/地区查询匹配案例 | style, space, location | 案例列表 + 实景图 + 造价 |
+| `analyze_design_photo` ⭐ | 上传参考图，识别元素并生成工艺+报价+工期 | image_url, area, location | 工艺清单 + BOM报价 + 工期表 |
+| `precise_estimate` | 精确报价（设计师后台） | processes, area, labor_level | BOM明细 + 人工拆解 |
+| `recommend_labor` | 根据工艺推荐人工配置 | process_ids | 人工等级 + 日薪 + 工时 |
+| `calculate_timeline` | 按工序拆解工期 | processes, area, labor_level | 甘特图式排期 |
+| `match_material_to_process` | 推荐材料×工艺的最佳组合 | material_id 或 process_id | 组合方案 + 效果预测 |
+| `compare_labor` | 对比同一工艺下不同人工的效果与成本 | process_id, labor_levels | 成本/工期/质量对比表 |
+| `resolve_issue` | 施工问题诊断与解决方案 | process_id, issue_description | 原因分析 + 解决步骤 |
+| `match_designer` | 根据项目需求匹配设计师 | style, area, special_requirements | 设计师列表 + 匹配分数 |
+
+---
+
+## 🤝 与项目群的关系
+
+| 项目 | 角色 | 关系 |
+| :--- | :--- | :--- |
+| [Nusantara-Atelier](https://github.com/vfvincentwong2026/Nusantara-Atelier) | 面向客户的展示网站 / 获客入口 | **第一消费方 + 数据事实源**（案例/照片/材料） |
+| [Nusantara-Villa](https://github.com/vfvincentwong2026/Nusantara-Villa) | C 端别墅配置器 + BOQ 报价 | P2 起消费方（BOQ 报价校准） |
+| [IndoScout-D-B](https://github.com/vfvincentwong2026/IndoScout-D-B) | B 端获客（幕后） | P2 起消费方（破冰话术个性化） |
+
+```text
+IndoScout-D-B（幕后获客）──破冰话术/预填链接──┐
+                                              ▼
+Nusantara-KG-MCP-Server（知识中台）──供能──▶ Nusantara-Atelier（客户前台）
+   ▲ 数据事实源                                │
+   └──────── 25案例/231图/51 SKU ◀────────────┘
+                                              ▼
+                                     Nusantara-Villa（C端转化）
+```
+
+---
+
+## 🚀 快速开始（代码开工后适用，当前未实现）
+
+> ⚠️ 以下为 P2 阶段服务化之后的使用方式。当前阶段请参考上方「数据录入工作流」。
+
+```bash
+# 1. 克隆仓库
 git clone https://github.com/vfvincentwong2026/Nusantara-KG-MCP-Server.git
 cd Nusantara-KG-MCP-Server
 npm install
-2️⃣ 准备 Obsidian Vault
-将你的知识库 Vault 链接到 /obsidian-vault/ 目录
 
-3️⃣ 编译知识图谱
-bash
-npm run build
-# 读取 .md 文件 → 输出 /data/nodes.json + /data/edges.json
-4️⃣ 本地运行 MCP Server
-bash
-npm run dev
-# 启动 MCP 服务，默认端口 3000
-5️⃣ 在 Claude Desktop 中使用
-claude_desktop_config.json:
+# 2. 编译知识图谱
+npm run build    # 读取 .md 文件 → 输出 data/nodes.json + data/edges.json
 
-json
-{
-  "mcpServers": {
-    "nusantara-kg": {
-      "url": "http://localhost:3000/sse"
-    }
-  }
-}
-☁️ Cloudflare 部署
-bash
-npm run deploy
-# 使用 Wrangler 部署到 Cloudflare Workers
-环境变量配置
-变量名	说明
-R2_ACCESS_KEY	R2 图片存储访问密钥
-R2_BUCKET_URL	图片 CDN 地址
-KG_DATA_URL	nodes.json / edges.json 地址
-VISION_API_KEY	多模态识别 API 密钥 (GPT-4o/Claude Vision)
-🔄 本地更新知识库 (零成本方案)
-本项目支持 本地维护 → 自动同步线上 的完整工作流，全部使用免费服务：
+# 3. 本地运行
+npm run dev      # 默认端口 3000
 
-text
-本地 Obsidian 编辑 → Obsidian Git 插件自动提交 → GitHub 私有仓库 → 
-GitHub Actions 自动编译 → Cloudflare Workers 自动部署 → MCP Server 加载新数据
-详细步骤：
+# 4. 部署
+npm run deploy   # Wrangler → Cloudflare Workers
+```
 
-本地：在 Obsidian 中修改/新增 Markdown 文件，安装 Obsidian Git 插件自动提交
+---
 
-云端：GitHub Actions 在 push 时自动执行 npm run build 编译 JSON
+## 🔄 本地更新知识库（零成本方案，规划）
 
-部署：编译后的 JSON 自动部署到 Cloudflare R2 或 D1
+```text
+本地编辑 Markdown → Git Push → GitHub Actions 自动编译 →
+Cloudflare Workers 自动部署 → 服务加载新数据
+```
 
-生效：MCP Server 热加载或自动重启，新数据立即生效
+全部免费额度：GitHub（私有仓库 + Actions 每月 2000 分钟）、Cloudflare Workers（每日 10 万次请求）、R2（10GB 存储 + 每月 1000 万次读取）。
 
-全部免费额度：
+---
 
-GitHub: 免费私有仓库 + Actions 每月 2000 分钟
+## 🤝 贡献指南
 
-Cloudflare Workers: 每日 10 万次请求
+欢迎 PR！特别欢迎以下贡献（详见 [CONTRIBUTING.md](CONTRIBUTING.md)）：
 
-Cloudflare R2: 10GB 免费存储 + 每月 1000 万次读取
+- **新增工艺节点**：按 `templates/01` 生成 + 真实经验校对后提交
+- **新增工时数据**：印尼本地实际施工经验数据
+- **新增材料信息**：印尼本地高端建材的规格/价格/供应商
+- **人工经验数据**：不同工艺下各类工人的实际表现
+- **实景照片**：各工艺节点/材料效果的高清实景图
 
-🗺️ 产品路线图
-阶段	目标	状态
-Phase 1	基础图谱构建: 25案例 + 8风格 + 12空间	✅ 数据准备中
-Phase 2	核心工艺录入: 贴砖/吊顶/找平/油漆 (含工时+人工对比)	🚧 开发中
-Phase 3	MCP Server: quick_estimate + query_case + recommend_labor	🚧 开发中
-Phase 3.5	多模态识图: analyze_design_photo 上线 ⭐	📋 新增重点
-Phase 4	材料-工艺效果矩阵 + 替代方案推理	📋 规划中
-Phase 5	前端集成: Atelier 调用 MCP 实现精准估价 + AI识图	📋 规划中
-Phase 6	对外开放 MCP 服务，支持第三方订阅	🔮 未来
-🤝 贡献指南
-欢迎 PR！特别欢迎以下贡献：
+**数据质量要求**：所有数字必须基于真实落地经验，不得虚构；工时要注明数据来源；图片需无版权争议。
 
-新增工艺节点：按标准MD格式提交施工工艺
+---
 
-新增工时数据：印尼本地实际施工经验数据
+## 📄 许可证
 
-新增材料信息：印尼本地高端建材的规格/价格/供应商
-
-人工经验数据：不同工艺下各类工人的实际表现
-
-实景照片：各工艺节点/材料效果的高清实景图
-
-数据质量要求
-所有数据必须基于真实落地经验，不得虚构
-
-工时要注明数据来源 (如: 来自XX项目实际记录)
-
-图片需有清晰的水印或无版权争议
-
-📄 许可证
 MIT License — 可自由使用、修改、商业化。
 
-📬 联系方式
-作者: @vfvincentwong2026
+## 📬 联系方式
 
-主项目: Nusantara-Atelier
+- 作者：[@vfvincentwong2026](https://github.com/vfvincentwong2026)
+- 主项目：[Nusantara-Atelier](https://github.com/vfvincentwong2026/Nusantara-Atelier)
 
-参考知识库: Nusantara Knowledge Galaxy
+---
 
-Built with ❤️ for the Indonesian premium interior design community.
+*Built with ❤️ for the Indonesian premium interior design community.*
 
-让每一分钱都花在看得见的地方。
+*让每一分钱都花在看得见的地方。*
