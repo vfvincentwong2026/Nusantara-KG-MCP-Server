@@ -181,7 +181,7 @@
           "sku": "PAINT-VENETIAN-201",
           "process": "premium-wall-paint-art-finish",
           "labor": "china-skilled-labor",
-          "note": "威尼斯灰泥/微水泥质感；极简收口（无踢脚线）"
+          "note": "威尼斯灰泥/微水泥质感；极简收口走 minimalist-trimless-edge（中国技工）"
         },
         "ceiling": {
           "material": null,
@@ -199,7 +199,6 @@
         }
       },
       "data_gaps": [
-        "极简收口（无踢脚线/窄边框）工艺节点",
         "金属线条 SKU"
       ]
     },
