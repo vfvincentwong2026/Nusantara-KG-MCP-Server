@@ -169,6 +169,7 @@ obsidian-vault/
 | 真实案例 | 25 | ✅ 已在 Atelier 仓库（`data/cases.json`，含房间级三语标注） |
 | 实景照片 | 231 | ✅ 已在 Atelier 仓库（`apps/web/public/cases/`，未上 R2） |
 | 材料 SKU | 51 | ✅ 已在 Atelier 仓库（`data/materials.json`） |
+| 材料节点 | 5 | ✅ 已录入（岩板/微水泥/艺术漆/大理石瓷砖/美缝剂，已锚定 Atelier SKU） |
 | 设计风格 | 8 | 📋 待录入本仓库 |
 | 空间类型 | 12 | 📋 待录入本仓库 |
 | 工艺节点 | 23 | ✅ 已录入（AI 生成 + 双语，⚠️ 数字待 Owner 校对 → verified） |
