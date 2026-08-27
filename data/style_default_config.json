@@ -18,7 +18,7 @@
           "sku": "TILE-GRANITE-101",
           "process": "wet-method-tiling",
           "labor": "indonesian-skilled-labor",
-          "note": "客餐厅柔光大板砖；法式另一主线是木地板（见 data_gaps）"
+          "note": "客餐厅柔光大板砖；木地板线走 wood-flooring（WOOD-* SKU 已映射）"
         },
         "feature_wall": {
           "material": null,
@@ -51,7 +51,6 @@
       },
       "data_gaps": [
         "护墙板/石膏线条 材料+工艺节点",
-        "木地板 SKU 映射（WOOD-LAMINATE-101 / WOOD-ENGINEERED-201）",
         "石膏线工艺与工时"
       ]
     },
@@ -216,7 +215,7 @@
           "sku": "TILE-GRANITE-101",
           "process": "wet-method-tiling",
           "labor": "indonesian-skilled-labor",
-          "note": "柔光暖色砖；SPC 地板为常见替代（见 data_gaps）"
+          "note": "柔光暖砖；SPC/木地板替代走 spc-flooring / wood-flooring（SKU 已映射）"
         },
         "feature_wall": {
           "material": "art-paint",
@@ -248,7 +247,6 @@
         }
       },
       "data_gaps": [
-        "SPC/木地板 SKU 映射（WOOD-SPC-001/101）",
         "弧形墙面工艺节点",
         "绒面/肌理漆细分 SKU"
       ]
