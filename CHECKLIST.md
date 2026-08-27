@@ -1,179 +1,129 @@
-# 校对速查表（⚠️ 数字清单 · 自动生成 2026-08-27）
+# 校对速查表 · 作战顺序版（自动生成 2026-08-27）
 
-> 用法：按表逐项核对，数字不对就直接在源文件里改；每过完一篇，删掉该篇所有 ⚠️
-> 并把 frontmatter 的 `status: draft` 改为 `verified`，然后 commit。
-> 建议顺序：防水 → 找平 → 贴砖/大板 → 吊顶 → 其他工艺 → 人工 → 工时 → 材料。
->
-> 全库共 **437 处 ⚠️**，分布在 **36 篇**文件中。校对完可重新运行本生成脚本核对清零。
-> 注：双语文件中同一数字会出现 EN/ZH 两行镜像，核一次改两处（或直接全局替换该数值）。
+> 按 M2 敏感性分析排序：先打最值钱的。每过完一篇：删 ⚠️ → `status: draft` 改 `verified` → commit。
+> 双语文件同一数字有 EN/ZH 两行镜像，全局替换该数值即可。
 
-## 一、工艺节点（23 篇）
+## 第〇批 · 待你拍板的规则参数（不是 ⚠️，但敏感度最高，先定）
 
-### Custom Built-in Wardrobe -Millwork Installation 定制集成（6 处）
+| 参数 | 总价敏感度 | 说明 |
+|---|---|---|
+| 损耗系数 waste_factor = 1.12 | ±14.6%（全场最敏感） | 来自 Atelier SKU 表，请按你实际损耗确认 |
+| 地面工程量 = 建筑面积 × 0.67（80/120） | ±7.3% | 通铺比例按你的项目实际 |
+| 吊顶工程量 = 建筑面积 × 60% | ±4.5% | 悬浮吊顶覆盖率 |
+| 墙面找平工程量 = 建筑面积 × 2.5 × 60% 高标准 | ±4.2% | 墙面系数 2.5 + 高标准比例 |
+| 岩板背景墙工程量 = 15m² | ±3.3% | 背景墙 + 玄关的典型配置量 |
+| 普工辅助配比 = 技工工日 × 0.5 | ±0.3% | 大板/防水/贴砖才计辅助 |
+| 巴厘岛区域系数 = 1.1 | 未测 | P1 设计文档 §6 问题 2 |
+| 工期并行系数 = 0.7 / 斋月系数 = 1.3 | 未测 | 交叉施工压缩率与斋月放大率 |
 
-- [ ] L74: | **Panel Moisture Content (Pre-install)** | **≤ 12%** ⚠️ | Acclimatize on-site for 7 days |
-- [ ] L78: | **Shelf Deflection Limit** | ≤ 1.5mm per 300mm span ⚠️ | Under full load (20kg) |
-- [ ] L79: | **Door Gap Tolerance** | 2–3mm uniform gap ⚠️ | Prevents binding due to humidity swelling |
-- [ ] L171: | **板材含水率（安装前）** | **≤ 12%** ⚠️ | 现场适应7天 |
-- [ ] L175: | **层板挠度限值** | 每300mm跨度≤1.5mm ⚠️ | 满载（20kg）条件下 |
-- [ ] L176: | **门板间隙公差** | 2–3mm均匀缝隙 ⚠️ | 防止高湿膨胀后卡滞 |
-
-### Electrical Switch & Socket -Low-Voltage Panel Installation（4 处）
-
-- [ ] L82: |**Wire Stripping Length**|8–10mm (screw terminals) / 10–12mm (push-in) ⚠️|Based on terminal spec|
-- [ ] L83: |**Torque for Screw Terminals**|0.4–0.8 Nm (depending on wire gauge) ⚠️|Use calibrated screwdriver|
-- [ ] L240: |**导线剥线长度**|8–10mm（螺丝端子）/ 10–12mm（快接式）⚠️|依端子规格|
-- [ ] L241: |**螺丝端子扭矩**|0.4–0.8 Nm（依线径）⚠️|使用校准螺丝刀|
-
-### Floating - Suspended Ceiling 轻钢龙骨悬浮吊顶（12 处）
-
-- [ ] L64: | **Main Keel Spacing** | ≤ 1200mm ⚠️ | Load-bearing standard |
-- [ ] L65: | **Secondary Keel Spacing** | **≤ 400mm** ⚠️ | Prevents gypsum board sagging in high humidity |
-- [ ] L67: | **Screw Spacing (Periphery)** | ≤ 150mm ⚠️ | Critical for edge anchoring |
-- [ ] L68: | **Screw Spacing (Internal)** | ≤ 200mm ⚠️ | — |
-- [ ] L70: | **Seismic Joint Width** | 5–8mm (at corners & intervals >12m) ⚠️ | Filled with flexible sealant |
-- [ ] L112: | **Structural Safety** | Hanger rod pull-out strength ≥ 1.5kN ⚠️ | Random tensile pull-test |
-- [ ] L135: | **主龙骨间距** | ≤ 1200mm ⚠️ | 承载标准 |
-- [ ] L136: | **副龙骨间距** | **≤ 400mm** ⚠️ | 防止高湿下石膏板下挠 |
-- [ ] L138: | **螺丝边距** | ≤ 150mm ⚠️ | 边缘锚固关键 |
-- [ ] L139: | **螺丝中距** | ≤ 200mm ⚠️ | — |
-- [ ] L141: | **抗震缝宽度** | 5–8mm（转角及长度>12m处）⚠️ | 柔性密封胶填充 |
-- [ ] L183: | **结构安全性** | 吊杆抗拔承载力≥1.5kN ⚠️ | 随机拉拔测试 |
-
-### Large-Format Slab -Sintered Stone Installation铺贴工艺（12 处）
-
-- [ ] L75: | **Total Installation Height** | 20–40mm ⚠️ | Leveling bed + adhesive layer |
-- [ ] L76: | **Flatness Tolerance** | **≤ 1mm / 2m** ⚠️ | Twice as strict as standard tiles |
-- [ ] L77: | **Hollow Ratio** | **0% (Strictly Forbidden)** ⚠️ | Full-contact bedding required |
-- [ ] L78: | **Adhesive Open Time** | ≤ 20 mins (at 30°C) ⚠️ | Indonesia's heat shortens working time |
-- [ ] L79: | **Joint Width** | 1.5–3.0mm ⚠️ | Allows for seismic movement |
-- [ ] L106: - *Acceptance*: Flatness ≤ 1mm/2m; adjacent slab lippage ≤ 0.3mm ⚠️; clips fully engaged.
-- [ ] L157: | **安装总厚度** | 20–40mm ⚠️ | 找平层+粘结层 |
-- [ ] L158: | **平整度公差** | **≤ 1mm / 2m** ⚠️ | 为普通砖标准的2倍 |
-- [ ] L159: | **空鼓率** | **0%（绝对禁止）** ⚠️ | 必须满粘 |
-- [ ] L160: | **胶粘剂开放时间** | ≤ 20 分钟（30°C环境）⚠️ | 印尼高温缩短可操作时间 |
-- [ ] L161: | **留缝宽度** | 1.5–3.0mm ⚠️ | 为抗震预留变形空间 |
-- [ ] L188: - *验收*：平整度≤1mm/2m；相邻板高低差≤0.3mm ⚠️；卡扣到位。
-
-### Metal Baseboard Installation金属踢脚线安装工艺（2 处）
-
-- [ ] L64: |**Material Thickness**|1.2–2.0mm ⚠️|—|
-- [ ] L139: |**材料厚度**|1.2–2.0mm ⚠️|—|
-
-### Microcement Wall Finishing微水泥墙面工艺（12 处）
-
-- [ ] L66: | **Total Finished Thickness** | 2.0–3.5mm ⚠️ | Depending on substrate flatness |
-- [ ] L67: | **Substrate Flatness (Pre-work)** | ≤ 1.5mm / 2m ⚠️ | Must be smoother than tile substrate |
-- [ ] L68: | **Crack-Bridging Mesh** | **Mandatory** for all walls (≥ 160g/m²) ⚠️ | Anti-seismic / anti-shrinkage |
-- [ ] L69: | **Ambient Temp. for Curing** | 15–30°C ⚠️ | Avoid direct sunlight and rain |
-- [ ] L70: | **Relative Humidity (RH)** | **≤ 75%** during application ⚠️ | Critical for Indonesia's rainy season |
-- [ ] L108: | **Adhesion Strength** | ≥ 1.0 MPa ⚠️ | Cross-cut tape test (ISO 2409) |
-- [ ] L131: | **总完成厚度** | 2.0–3.5mm ⚠️ | 依基层平整度调整 |
-- [ ] L132: | **施工前基层平整度** | ≤ 1.5mm / 2m ⚠️ | 须比铺砖基层更平 |
-- [ ] L133: | **抗裂网格布** | **强制使用**（≥160g/m²）⚠️ | 抗震/抗收缩 |
-- [ ] L134: | **养护环境温度** | 15–30°C ⚠️ | 避免阳光直射和雨水 |
-- [ ] L135: | **施工相对湿度（RH）** | **≤ 75%** ⚠️ | 对印尼雨季至关重要 |
-- [ ] L173: | **附着强度** | ≥1.0 MPa ⚠️ | 划格法（ISO 2409） |
-
-### Natural Stone Flooring Installation 天然石材地面安装（8 处）
-
-- [ ] L63: | **Stone Moisture Content (Pre-install)** | **≤ 3%** ⚠️ | Store in ventilated area for 7 days before use |
-- [ ] L65: | **Substrate Moisture** | **< 6%** (stricter than tiles) ⚠️ | High moisture = efflorescence risk |
-- [ ] L68: | **Epoxy Pot Life** | ≤ 30 minutes (at 30°C) ⚠️ | Small-batch mixing required |
-- [ ] L69: | **Joint Width** | 2–3mm (floor) / 3–5mm (commercial) ⚠️ | Allows for thermal/seismic expansion |
-- [ ] L133: | **石材含水率（铺贴前）** | **≤ 3%** ⚠️ | 到场后通风放置7天平衡 |
-- [ ] L135: | **基层含水率** | **< 6%**（严于瓷砖）⚠️ | 含水率=泛碱风险指标 |
-- [ ] L138: | **环氧可操作时间** | ≤ 30分钟（30°C环境）⚠️ | 必须小批量拌合 |
-- [ ] L139: | **留缝宽度** | 2–3mm（地面）/ 3–5mm（商业）⚠️ | 预留热胀/地震伸缩 |
-
-### Premium Wall Paint -Art Paint Finish（14 处）
-
-- [ ] L67: | **Substrate Moisture Content** | **< 8%** (mandatory test) ⚠️ | Higher = efflorescence risk |
-- [ ] L68: | **Substrate pH Value** | **< 10** (neutralized) ⚠️ | High alkalinity causes yellowing |
-- [ ] L69: | **Substrate Flatness (Pre-paint)** | **≤ 1mm / 2m** ⚠️ | Prepared by [[ribbed-screed-gauging-strips]] + fine putty |
-- [ ] L70: | **Ambient Temperature** | 15–30°C ⚠️ | — |
-- [ ] L71: | **Relative Humidity (RH)** | **≤ 80%** (ideal <75%) ⚠️ | High RH causes bubbling & mold |
-- [ ] L75: | **Recoat Interval** | 4–6 hours (at 30°C, 70% RH) ⚠️ | — |
-- [ ] L76: | **Full Cure Before Use** | 7 days (for chemical curing) ⚠️ | — |
-- [ ] L145: | **基层含水率** | **< 8%**（强制检测）⚠️ | 超标=泛碱风险 |
-- [ ] L146: | **基层pH值** | **< 10**（中和处理）⚠️ | 高碱导致黄变 |
-- [ ] L147: | **基层平整度（涂装前）** | **≤ 1mm / 2m** ⚠️ | 由冲筋找平+细面墙泥实现 |
-- [ ] L148: | **环境温度** | 15–30°C ⚠️ | — |
-- [ ] L149: | **相对湿度（RH）** | **≤ 80%**（理想<75%）⚠️ | 高湿导致起泡和霉变 |
-- [ ] L153: | **重涂间隔** | 4–6小时（30°C，70% RH）⚠️ | — |
-- [ ] L154: | **使用前完全固化** | 7天（化学固化）⚠️ | — |
-
-### Ribbed Screed -Gauging Strips Leveling 冲筋找平（10 处）
-
-- [ ] L60: | **Rib (Gauging Strip) Spacing** | **≤ 1.2m** (vertical) ⚠️ | Ensures straightedge rigidity without bowing |
-- [ ] L61: | **Rib Cross-Section** | 30–50mm wide × 10–25mm thick ⚠️ | Thickness = maximum substrate deviation + 5mm minimum |
-- [ ] L62: | **Final Plane Flatness** | **≤ 2mm / 2m** ⚠️ | Critical baseline for large slabs/microcement |
-- [ ] L63: | **Final Plane Verticality** | **≤ 2mm / 2m** ⚠️ | For vertical wall applications |
-- [ ] L65: | **Open Working Time** | ≥ 45 minutes (at 32°C) ⚠️ | Without retarder, sets in < 20 mins |
-- [ ] L131: | **筋条（冲筋）间距** | **≤ 1.2m** ⚠️ | 保证2m刮杠刚性不挠曲 |
-- [ ] L132: | **筋条截面尺寸** | 30–50mm宽 × 10–25mm厚 ⚠️ | 厚度=基层最大偏差+5mm余量 |
-- [ ] L133: | **完成面平整度** | **≤ 2mm / 2m** ⚠️ | 大板/微水泥硬性门槛 |
-- [ ] L134: | **完成面垂直度（墙面）** | **≤ 2mm / 2m** ⚠️ | — |
-- [ ] L136: | **可操作时间** | ≥ 45分钟（32°C环境）⚠️ | 无缓凝剂时<20分钟即凝结 |
-
-### Sanitary Ware Installation卫浴洁具安装工艺（4 处）
-
-- [ ] L75: |**Basin Mounting Height**|800–850mm (finished floor to basin rim) ⚠️|User comfort standard|
-- [ ] L76: |**Faucet Flow Rate**|≤ 9 L/min (Indonesia water pressure: 1–3 bar) ⚠️|—|
-- [ ] L203: |**洗手盆安装高度**|800–850mm（完成面至盆沿）⚠️|人体工学标准|
-- [ ] L204: |**龙头流量**|≤ 9 L/min（印尼水压：1–3 bar）⚠️|—|
-
-### Wallpaper - Fabric Wallcovering Installation铺贴工艺（12 处）
-
-- [ ] L60: | **Substrate Flatness (Pre-work)** | **≤ 1.5mm / 2m** ⚠️ | Any deviation >1.5mm will show through |
-- [ ] L61: | **Substrate Moisture Content** | **< 8%** (mandatory test) ⚠️ | Critical for Indonesia's humid climate |
-- [ ] L62: | **Ambient Temperature** | 15–30°C ⚠️ | — |
-- [ ] L63: | **Relative Humidity (RH)** | **≤ 75%** during application ⚠️ | Use dehumidifier if exceeding |
-- [ ] L64: | **Adhesive Open Time** | 5–10 minutes (at 30°C) ⚠️ | Indonesia's heat shortens working window |
-- [ ] L66: | **Drying Time Before Trimming** | 24–48 hours ⚠️ | Prevents shrinkage gaps |
-- [ ] L125: | **施工前基层平整度** | **≤ 1.5mm / 2m** ⚠️ | 偏差>1.5mm会透出 |
-- [ ] L126: | **基层含水率** | **< 8%（强制检测）** ⚠️ | 印尼高湿气候关键指标 |
-- [ ] L127: | **环境温度** | 15–30°C ⚠️ | — |
-- [ ] L128: | **施工相对湿度（RH）** | **≤ 75%** ⚠️ | 超标须使用除湿机 |
-- [ ] L129: | **胶粘剂开放时间** | 5–10分钟（30°C环境）⚠️ | 高温缩短可操作窗口 |
-- [ ] L131: | **裁切前干燥时间** | 24–48小时 ⚠️ | 防止收缩产生缝隙 |
-
-### Wet Method Tiling湿铺法地砖铺贴（18 处）
-
-- [ ] L64: - **Thickness**: 30–50mm ⚠️
-- [ ] L65: - **Flatness Tolerance**: < 3mm per 2m straightedge ⚠️
-- [ ] L66: - **Hollow Ratio Standard**: < 3% per tile (main corridors must have zero hollow spots) ⚠️
-- [ ] L75: - *Acceptance*: Flatness tolerance ≤ 3mm per 2m ⚠️.
-- [ ] L83: - *Acceptance*: All corners flush; adjacent tile height difference ≤ 0.5mm ⚠️.
-- [ ] L95: - *Acceptance*: Joint width uniform (1.5–2.5mm) ⚠️; sealant color matched to tile.
-- [ ] L99: | Hollow Ratio | Corner hollow < 3% per tile; **zero hollow** on main walkways ⚠️ | Tapping sound test |
-- [ ] L100: | Flatness | Gap ≤ 1mm under 2m straightedge ⚠️ | — |
-- [ ] L102: | Joint Width | Uniform 1.5–2.5mm ⚠️ | Visual + caliper |
-- [ ] L122: - **铺贴厚度**：30–50mm ⚠️
-- [ ] L123: - **平整度公差**：2m 靠尺检查，误差 < 3mm ⚠️
-- [ ] L124: - **空鼓率标准**：单块砖边角空鼓 < 3%，主要通道严禁空鼓 ⚠️
-- [ ] L133: - *验收*：平整度误差 < 3mm/2m ⚠️。
-- [ ] L141: - *验收*：四角平整，相邻砖高差 < 0.5mm ⚠️。
-- [ ] L153: - *验收*：缝宽 1.5–2.5mm 均匀 ⚠️，美缝颜色与砖色协调。
-- [ ] L157: | 空鼓率 | 单块砖边角空鼓 < 3%，主要通道**严禁空鼓** ⚠️ | 敲击听音法 |
-- [ ] L158: | 平整度 | 2m 靠尺检查，缝隙 < 1mm ⚠️ | — |
-- [ ] L160: | 缝宽 | 1.5–2.5mm 均匀一致 ⚠️ | 目测 + 卡尺 |
-
-### Wood Veneer Panel Wall Installation木饰面挂板工艺（10 处）
-
-- [ ] L64: | **Veneer Panel Thickness** | 3–6mm (backed with plywood/MDF) ⚠️ | — |
-- [ ] L65: | **Substrate Flatness** | ≤ 2mm / 2m ⚠️ | For direct-bond method |
-- [ ] L66: | **Expansion Joint Width** | **3–5mm** (at all panel junctions) ⚠️ | Mandatory for humidity movement |
-- [ ] L67: | **Expansion Joint Spacing** | ≤ 2.4m (horizontal) / ≤ 1.2m (vertical) ⚠️ | — |
-- [ ] L68: | **Moisture Content of Veneer** | **8–12%** (at installation) ⚠️ | Must match ambient equilibrium |
-- [ ] L132: | **饰面板厚度** | 3–6mm（背衬胶合板/MDF）⚠️ | — |
-- [ ] L133: | **基层平整度** | ≤ 2mm / 2m ⚠️ | 直接粘贴法适用 |
-- [ ] L134: | **伸缩缝宽度** | **3–5mm**（所有板缝处）⚠️ | 湿度变形强制项 |
-- [ ] L135: | **伸缩缝间距** | 水平≤2.4m / 垂直≤1.2m ⚠️ | — |
-- [ ] L136: | **饰面板含水率** | **8–12%**（安装时）⚠️ | 须与环境平衡含水率匹配 |
+> 拍板方式：直接在下方表格里填你的值，或回复我逐条确认，我写回对应文件。
+| 参数 | 你的确认值 |
+|---|---|
+| 损耗系数 waste_factor = 1.12 |  |
+| 地面工程量 = 建筑面积 × 0.67（80/120） |  |
+| 吊顶工程量 = 建筑面积 × 60% |  |
+| 墙面找平工程量 = 建筑面积 × 2.5 × 60% 高标准 |  |
+| 岩板背景墙工程量 = 15m² |  |
+| 普工辅助配比 = 技工工日 × 0.5 |  |
+| 巴厘岛区域系数 = 1.1 |  |
+| 工期并行系数 = 0.7 / 斋月系数 = 1.3 |  |
 
 
-## 二、人工档案（3 篇）
+## 第一批 · 材料单价（🔴 敏感度最高，先打）（76 处）
+
+### Art Paint艺术漆（16 处）
+
+- [ ] L23: size: 桶装 5-20kg ⚠️
+- [ ] L29: per_m2: 45000 ⚠️
+- [ ] L57: Art paint is the highest cost-performance premium wall finish: at Rp 45,000–120,000/㎡ ⚠️ it delivers effects that vis...
+- [ ] L62: - **Maintenance**: 低-中；局部修补需同批材料 ⚠️
+- [ ] L63: - **Durability (Indonesia climate)**: 高湿下需防霉底漆；沿海盐雾环境建议罩面 ⚠️
+- [ ] L70: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——灯光洗墙场景垂平度 ≤2mm/2m ⚠️
+- [ ] L72: - **施工禁忌**：雨季高湿需延长层间干燥 ⚠️；同一墙面必须同批材料连续施工，停工即留接痕 ⚠️
+- [ ] L79: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L81: - 渠道：本地艺术涂料专营（含施工队打包）⚠️；进口威尼斯灰泥经品牌代理 ⚠️
+- [ ] L88: 艺术漆是性价比最高的高端墙面方案：Rp 45,000–120,000/㎡ ⚠️ 即可实现视觉上媲美石材/木饰面的效果，成本仅为其 1/5–1/10。材料本身容错率高，但施工者不容错——同一桶漆，不同手艺人做出的效果天差地别。
+- [ ] L93: - **维护**：低-中；局部修补需同批材料 ⚠️
+- [ ] L94: - **耐久性（印尼气候）**：高湿需防霉底漆；沿海盐雾建议罩面 ⚠️
+- [ ] L101: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——洗墙场景垂平度 ≤2mm/2m ⚠️
+- [ ] L103: - **施工禁忌**：雨季延长层间干燥 ⚠️；同墙面同批材料连续施工 ⚠️
+- [ ] L110: ### 供应商参考（雅加达）⚠️
+- [ ] L112: - 渠道：本地艺术涂料专营（含施工打包）⚠️；进口威尼斯灰泥品牌代理 ⚠️
+
+### Epoxy Grout美缝剂（18 处）
+
+- [ ] L23: size: 400ml 双管装（约施工 25-35m 缝）⚠️
+- [ ] L26: brand: 进口（MAPEI 类）；国产（卓高/德高类）；本地杂牌 ⚠️
+- [ ] L28: per_unit: 150000 ⚠️
+- [ ] L29: per_m2: 15000 ⚠️
+- [ ] L55: Epoxy grout is the cheapest "premium upgrade" in any tiling project: Rp 15,000–25,000/㎡ of floor area ⚠️, yet it is w...
+- [ ] L61: - **Durability (Indonesia climate)**: 高湿环境显著优于水泥填缝；卫浴湿区强制环氧 ⚠️
+- [ ] L68: - **推荐人工**：[[indonesian-skilled-labor|印尼技工]]（可独立承担，需培训压缝手法 ⚠️）
+- [ ] L69: - **施工禁忌**：砖缝未干透即施工（发白脱落）⚠️；余料擦洗超时（环氧固化后铲不净）⚠️；卫浴禁用水泥填缝替代
+- [ ] L76: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L77: - **Atelier SKU 锚定**：⚠️ Atelier 51 SKU 中暂无美缝剂条目，建议新增（`ACCESSORY-GROUT-001`，锚定价 Rp 150,000/400ml）
+- [ ] L78: - 渠道：建材市场辅料区（本地杂牌多，警惕固化慢/变色）；MAPEI 等品牌经建材代理 ⚠️
+- [ ] L85: 美缝剂是铺贴项目中最便宜的"高端升级"：地面每平米仅 Rp 15,000–25,000 ⚠️，却是业主每天目光落点。印尼高湿气候下，水泥填缝数月即在湿区发霉，环氧美缝近乎永久。失败都来自工序而非产品：抢工（砖层未养护）、清缝不净、余料...
+- [ ] L91: - **耐久性（印尼气候）**：远优于水泥填缝；卫浴湿区强制环氧 ⚠️
+- [ ] L98: - **推荐人工**：[[indonesian-skilled-labor|印尼技工]]（可独立，需培训压缝手法 ⚠️）
+- [ ] L99: - **施工禁忌**：缝未干透施工（发白脱落）⚠️；余料擦洗超时 ⚠️；卫浴禁用水泥填缝
+- [ ] L106: ### 供应商参考（雅加达）⚠️
+- [ ] L107: - **Atelier SKU 锚定**：⚠️ Atelier 暂无美缝剂 SKU，建议新增（`ACCESSORY-GROUT-001`，锚定价 Rp 150,000/400ml）
+- [ ] L108: - 渠道：建材市场辅料区（警惕杂牌固化慢/变色）；MAPEI 品牌代理 ⚠️
+
+### Marble Tiles大理石瓷砖（12 处）
+
+- [ ] L23: size: 600×1200mm / 900×1800mm ⚠️
+- [ ] L29: per_m2: 280000 ⚠️
+- [ ] L64: - **Durability (Indonesia climate)**: 优异；高湿环境配合防碱背涂可杜绝泛碱 ⚠️
+- [ ] L70: - **必须工艺**：[[wet-method-tiling|湿铺法贴砖]]（常规规格）；≥900×1800 按 [[large-format-slab-installation|大板铺贴]] 管理 ⚠️
+- [ ] L72: - **施工禁忌**：调平器强制使用；雨季测基层含水率 ⚠️；同空间用同批次砖（色差）
+- [ ] L79: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L81: - 渠道：Roman/Granito 品牌展厅与经销商（雅加达各建材市场均有）⚠️
+- [ ] L94: - **耐久性（印尼气候）**：优异；高湿配合防碱背涂杜绝泛碱 ⚠️
+- [ ] L100: - **必须工艺**：[[wet-method-tiling|湿铺法贴砖]]；≥900×1800 按 [[large-format-slab-installation|大板铺贴]] 管理 ⚠️
+- [ ] L102: - **施工禁忌**：强制调平器；雨季测基层含水率 ⚠️；同空间同批次（色差）
+- [ ] L109: ### 供应商参考（雅加达）⚠️
+- [ ] L111: - 渠道：Roman/Granito 展厅与经销商 ⚠️
+
+### Microcement微水泥（15 处）
+
+- [ ] L23: size: 桶装 20kg（约 10-12㎡/桶·遍）⚠️
+- [ ] L26: brand: 进口（Topciment 类）；本地替代（质量不稳）⚠️
+- [ ] L29: per_m2: 450000 ⚠️
+- [ ] L60: - **Maintenance**: 低；污渍及时擦拭，定期补罩面 ⚠️
+- [ ] L61: - **Durability (Indonesia climate)**: 高湿环境必须低含水率基层 + 除湿养护，否则泛白发花 ⚠️
+- [ ] L68: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——基层垂平度 ≤2mm/2m 是硬前提 ⚠️
+- [ ] L70: - **施工禁忌**：雨季施工必须室内除湿（含水率超标即停工）⚠️；每层间隔时间不可压缩；禁用本地无体系杂牌材料 ⚠️
+- [ ] L77: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L79: - 渠道：进口品牌印尼代理；警惕本地"微水泥"替代品——成膜体系不完整，一年后开裂案例高发 ⚠️
+- [ ] L91: - **维护**：低；定期补罩面 ⚠️
+- [ ] L92: - **耐久性（印尼气候）**：高湿必须低含水率基层 + 除湿养护，否则泛白发花 ⚠️
+- [ ] L99: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——垂平度 ≤2mm/2m 硬前提 ⚠️
+- [ ] L101: - **施工禁忌**：雨季必须室内除湿 ⚠️；层间间隔不可压缩；禁用本地无体系杂牌 ⚠️
+- [ ] L108: ### 供应商参考（雅加达）⚠️
+- [ ] L110: - 渠道：进口品牌印尼代理；警惕本地替代品——成膜体系不完整，一年后开裂高发 ⚠️
+
+### Sintered Stone岩板（15 处）
+
+- [ ] L23: size: 1200×2400mm / 900×1800mm ⚠️
+- [ ] L24: thickness: 6-12mm ⚠️
+- [ ] L29: per_m2: 650000 ⚠️
+- [ ] L57: Sintered stone is the flagship material of Indonesian premium interiors — the default choice for living-room feature ...
+- [ ] L63: - **Durability (Indonesia climate)**: 高湿高盐雾（巴厘岛沿海）下表现优异；基层湿气须用防潮底涂隔离 ⚠️
+- [ ] L71: - **施工禁忌**：严禁普通切割机手动切割（崩边）；需水刀/桥切 ⚠️；搬运必须吸盘架双人作业；印尼雨季进场注意包装防潮
+- [ ] L78: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L80: - 渠道：雅加达建材进口商（Tanjung Priok 港清关）、品牌代理展厅（MKG/PIK 区域）⚠️
+- [ ] L81: - 国产岩板（新明珠类）价格约进口的 50-60%，纹理与平整度有差距 ⚠️
+- [ ] L88: 岩板是印尼高端室内的旗舰材料——客厅背景墙与大面无缝地面的默认选项。物理性能极佳（莫氏 6+ 硬度、吸水率趋零、耐高温），但施工失败会抹平一切优势：单片 1200×2400 岩板价值 Rp 2–4 百万 ⚠️，破损不可修复。
+- [ ] L94: - **耐久性（印尼气候）**：高湿高盐雾（巴厘岛沿海）表现优异；基层湿气需防潮底涂隔离 ⚠️
+- [ ] L102: - **施工禁忌**：严禁手动切割（崩边），需水刀/桥切 ⚠️；吸盘架双人搬运；雨季进场防包装受潮
+- [ ] L109: ### 供应商参考（雅加达）⚠️
+- [ ] L111: - 渠道：雅加达建材进口商（Tanjung Priok 港清关）、品牌代理展厅 ⚠️
+- [ ] L112: - 国产岩板价格约进口的 50-60%，纹理与平整度有差距 ⚠️
+
+
+## 第二批 · 人工日薪与效率（🟡 中国技工日薪优先）（69 处）
 
 ### China Skilled Labor中国技工（23 处）
 
@@ -254,7 +204,7 @@
 - [ ] L181: │   └── 无监督产出不可靠 ⚠️ → 监督成本入预算
 
 
-## 三、工时定额（15 篇）
+## 第三批 · 工时定额（🟢 可最后过）（168 处）
 
 ### WorkHour Bathroom Waterproofing - China Skilled（12 处）
 
@@ -470,95 +420,171 @@
 - [ ] L67: - **难度折算**：拌浆水灰比由技工定量，普工不得自行加水——空鼓高发诱因 ⚠️
 
 
-## 四、材料档案（5 篇）
+## 第四批 · 工艺标准与容差（🟢 多为施工标准，扫读即可）（124 处）
 
-### Art Paint艺术漆（16 处）
+### Custom Built-in Wardrobe -Millwork Installation 定制集成（6 处）
 
-- [ ] L23: size: 桶装 5-20kg ⚠️
-- [ ] L29: per_m2: 45000 ⚠️
-- [ ] L57: Art paint is the highest cost-performance premium wall finish: at Rp 45,000–120,000/㎡ ⚠️ it delivers effects that vis...
-- [ ] L62: - **Maintenance**: 低-中；局部修补需同批材料 ⚠️
-- [ ] L63: - **Durability (Indonesia climate)**: 高湿下需防霉底漆；沿海盐雾环境建议罩面 ⚠️
-- [ ] L70: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——灯光洗墙场景垂平度 ≤2mm/2m ⚠️
-- [ ] L72: - **施工禁忌**：雨季高湿需延长层间干燥 ⚠️；同一墙面必须同批材料连续施工，停工即留接痕 ⚠️
-- [ ] L79: ### Supplier Reference (Jakarta) ⚠️
-- [ ] L81: - 渠道：本地艺术涂料专营（含施工队打包）⚠️；进口威尼斯灰泥经品牌代理 ⚠️
-- [ ] L88: 艺术漆是性价比最高的高端墙面方案：Rp 45,000–120,000/㎡ ⚠️ 即可实现视觉上媲美石材/木饰面的效果，成本仅为其 1/5–1/10。材料本身容错率高，但施工者不容错——同一桶漆，不同手艺人做出的效果天差地别。
-- [ ] L93: - **维护**：低-中；局部修补需同批材料 ⚠️
-- [ ] L94: - **耐久性（印尼气候）**：高湿需防霉底漆；沿海盐雾建议罩面 ⚠️
-- [ ] L101: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——洗墙场景垂平度 ≤2mm/2m ⚠️
-- [ ] L103: - **施工禁忌**：雨季延长层间干燥 ⚠️；同墙面同批材料连续施工 ⚠️
-- [ ] L110: ### 供应商参考（雅加达）⚠️
-- [ ] L112: - 渠道：本地艺术涂料专营（含施工打包）⚠️；进口威尼斯灰泥品牌代理 ⚠️
+- [ ] L74: | **Panel Moisture Content (Pre-install)** | **≤ 12%** ⚠️ | Acclimatize on-site for 7 days |
+- [ ] L78: | **Shelf Deflection Limit** | ≤ 1.5mm per 300mm span ⚠️ | Under full load (20kg) |
+- [ ] L79: | **Door Gap Tolerance** | 2–3mm uniform gap ⚠️ | Prevents binding due to humidity swelling |
+- [ ] L171: | **板材含水率（安装前）** | **≤ 12%** ⚠️ | 现场适应7天 |
+- [ ] L175: | **层板挠度限值** | 每300mm跨度≤1.5mm ⚠️ | 满载（20kg）条件下 |
+- [ ] L176: | **门板间隙公差** | 2–3mm均匀缝隙 ⚠️ | 防止高湿膨胀后卡滞 |
 
-### Epoxy Grout美缝剂（18 处）
+### Electrical Switch & Socket -Low-Voltage Panel Installation（4 处）
 
-- [ ] L23: size: 400ml 双管装（约施工 25-35m 缝）⚠️
-- [ ] L26: brand: 进口（MAPEI 类）；国产（卓高/德高类）；本地杂牌 ⚠️
-- [ ] L28: per_unit: 150000 ⚠️
-- [ ] L29: per_m2: 15000 ⚠️
-- [ ] L55: Epoxy grout is the cheapest "premium upgrade" in any tiling project: Rp 15,000–25,000/㎡ of floor area ⚠️, yet it is w...
-- [ ] L61: - **Durability (Indonesia climate)**: 高湿环境显著优于水泥填缝；卫浴湿区强制环氧 ⚠️
-- [ ] L68: - **推荐人工**：[[indonesian-skilled-labor|印尼技工]]（可独立承担，需培训压缝手法 ⚠️）
-- [ ] L69: - **施工禁忌**：砖缝未干透即施工（发白脱落）⚠️；余料擦洗超时（环氧固化后铲不净）⚠️；卫浴禁用水泥填缝替代
-- [ ] L76: ### Supplier Reference (Jakarta) ⚠️
-- [ ] L77: - **Atelier SKU 锚定**：⚠️ Atelier 51 SKU 中暂无美缝剂条目，建议新增（`ACCESSORY-GROUT-001`，锚定价 Rp 150,000/400ml）
-- [ ] L78: - 渠道：建材市场辅料区（本地杂牌多，警惕固化慢/变色）；MAPEI 等品牌经建材代理 ⚠️
-- [ ] L85: 美缝剂是铺贴项目中最便宜的"高端升级"：地面每平米仅 Rp 15,000–25,000 ⚠️，却是业主每天目光落点。印尼高湿气候下，水泥填缝数月即在湿区发霉，环氧美缝近乎永久。失败都来自工序而非产品：抢工（砖层未养护）、清缝不净、余料...
-- [ ] L91: - **耐久性（印尼气候）**：远优于水泥填缝；卫浴湿区强制环氧 ⚠️
-- [ ] L98: - **推荐人工**：[[indonesian-skilled-labor|印尼技工]]（可独立，需培训压缝手法 ⚠️）
-- [ ] L99: - **施工禁忌**：缝未干透施工（发白脱落）⚠️；余料擦洗超时 ⚠️；卫浴禁用水泥填缝
-- [ ] L106: ### 供应商参考（雅加达）⚠️
-- [ ] L107: - **Atelier SKU 锚定**：⚠️ Atelier 暂无美缝剂 SKU，建议新增（`ACCESSORY-GROUT-001`，锚定价 Rp 150,000/400ml）
-- [ ] L108: - 渠道：建材市场辅料区（警惕杂牌固化慢/变色）；MAPEI 品牌代理 ⚠️
+- [ ] L82: |**Wire Stripping Length**|8–10mm (screw terminals) / 10–12mm (push-in) ⚠️|Based on terminal spec|
+- [ ] L83: |**Torque for Screw Terminals**|0.4–0.8 Nm (depending on wire gauge) ⚠️|Use calibrated screwdriver|
+- [ ] L240: |**导线剥线长度**|8–10mm（螺丝端子）/ 10–12mm（快接式）⚠️|依端子规格|
+- [ ] L241: |**螺丝端子扭矩**|0.4–0.8 Nm（依线径）⚠️|使用校准螺丝刀|
 
-### Marble Tiles大理石瓷砖（12 处）
+### Floating - Suspended Ceiling 轻钢龙骨悬浮吊顶（12 处）
 
-- [ ] L23: size: 600×1200mm / 900×1800mm ⚠️
-- [ ] L29: per_m2: 280000 ⚠️
-- [ ] L64: - **Durability (Indonesia climate)**: 优异；高湿环境配合防碱背涂可杜绝泛碱 ⚠️
-- [ ] L70: - **必须工艺**：[[wet-method-tiling|湿铺法贴砖]]（常规规格）；≥900×1800 按 [[large-format-slab-installation|大板铺贴]] 管理 ⚠️
-- [ ] L72: - **施工禁忌**：调平器强制使用；雨季测基层含水率 ⚠️；同空间用同批次砖（色差）
-- [ ] L79: ### Supplier Reference (Jakarta) ⚠️
-- [ ] L81: - 渠道：Roman/Granito 品牌展厅与经销商（雅加达各建材市场均有）⚠️
-- [ ] L94: - **耐久性（印尼气候）**：优异；高湿配合防碱背涂杜绝泛碱 ⚠️
-- [ ] L100: - **必须工艺**：[[wet-method-tiling|湿铺法贴砖]]；≥900×1800 按 [[large-format-slab-installation|大板铺贴]] 管理 ⚠️
-- [ ] L102: - **施工禁忌**：强制调平器；雨季测基层含水率 ⚠️；同空间同批次（色差）
-- [ ] L109: ### 供应商参考（雅加达）⚠️
-- [ ] L111: - 渠道：Roman/Granito 展厅与经销商 ⚠️
+- [ ] L64: | **Main Keel Spacing** | ≤ 1200mm ⚠️ | Load-bearing standard |
+- [ ] L65: | **Secondary Keel Spacing** | **≤ 400mm** ⚠️ | Prevents gypsum board sagging in high humidity |
+- [ ] L67: | **Screw Spacing (Periphery)** | ≤ 150mm ⚠️ | Critical for edge anchoring |
+- [ ] L68: | **Screw Spacing (Internal)** | ≤ 200mm ⚠️ | — |
+- [ ] L70: | **Seismic Joint Width** | 5–8mm (at corners & intervals >12m) ⚠️ | Filled with flexible sealant |
+- [ ] L112: | **Structural Safety** | Hanger rod pull-out strength ≥ 1.5kN ⚠️ | Random tensile pull-test |
+- [ ] L135: | **主龙骨间距** | ≤ 1200mm ⚠️ | 承载标准 |
+- [ ] L136: | **副龙骨间距** | **≤ 400mm** ⚠️ | 防止高湿下石膏板下挠 |
+- [ ] L138: | **螺丝边距** | ≤ 150mm ⚠️ | 边缘锚固关键 |
+- [ ] L139: | **螺丝中距** | ≤ 200mm ⚠️ | — |
+- [ ] L141: | **抗震缝宽度** | 5–8mm（转角及长度>12m处）⚠️ | 柔性密封胶填充 |
+- [ ] L183: | **结构安全性** | 吊杆抗拔承载力≥1.5kN ⚠️ | 随机拉拔测试 |
 
-### Microcement微水泥（15 处）
+### Large-Format Slab -Sintered Stone Installation铺贴工艺（12 处）
 
-- [ ] L23: size: 桶装 20kg（约 10-12㎡/桶·遍）⚠️
-- [ ] L26: brand: 进口（Topciment 类）；本地替代（质量不稳）⚠️
-- [ ] L29: per_m2: 450000 ⚠️
-- [ ] L60: - **Maintenance**: 低；污渍及时擦拭，定期补罩面 ⚠️
-- [ ] L61: - **Durability (Indonesia climate)**: 高湿环境必须低含水率基层 + 除湿养护，否则泛白发花 ⚠️
-- [ ] L68: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——基层垂平度 ≤2mm/2m 是硬前提 ⚠️
-- [ ] L70: - **施工禁忌**：雨季施工必须室内除湿（含水率超标即停工）⚠️；每层间隔时间不可压缩；禁用本地无体系杂牌材料 ⚠️
-- [ ] L77: ### Supplier Reference (Jakarta) ⚠️
-- [ ] L79: - 渠道：进口品牌印尼代理；警惕本地"微水泥"替代品——成膜体系不完整，一年后开裂案例高发 ⚠️
-- [ ] L91: - **维护**：低；定期补罩面 ⚠️
-- [ ] L92: - **耐久性（印尼气候）**：高湿必须低含水率基层 + 除湿养护，否则泛白发花 ⚠️
-- [ ] L99: - **前置工序**：[[ribbed-screed-gauging-strips|冲筋找平]]——垂平度 ≤2mm/2m 硬前提 ⚠️
-- [ ] L101: - **施工禁忌**：雨季必须室内除湿 ⚠️；层间间隔不可压缩；禁用本地无体系杂牌 ⚠️
-- [ ] L108: ### 供应商参考（雅加达）⚠️
-- [ ] L110: - 渠道：进口品牌印尼代理；警惕本地替代品——成膜体系不完整，一年后开裂高发 ⚠️
+- [ ] L75: | **Total Installation Height** | 20–40mm ⚠️ | Leveling bed + adhesive layer |
+- [ ] L76: | **Flatness Tolerance** | **≤ 1mm / 2m** ⚠️ | Twice as strict as standard tiles |
+- [ ] L77: | **Hollow Ratio** | **0% (Strictly Forbidden)** ⚠️ | Full-contact bedding required |
+- [ ] L78: | **Adhesive Open Time** | ≤ 20 mins (at 30°C) ⚠️ | Indonesia's heat shortens working time |
+- [ ] L79: | **Joint Width** | 1.5–3.0mm ⚠️ | Allows for seismic movement |
+- [ ] L106: - *Acceptance*: Flatness ≤ 1mm/2m; adjacent slab lippage ≤ 0.3mm ⚠️; clips fully engaged.
+- [ ] L157: | **安装总厚度** | 20–40mm ⚠️ | 找平层+粘结层 |
+- [ ] L158: | **平整度公差** | **≤ 1mm / 2m** ⚠️ | 为普通砖标准的2倍 |
+- [ ] L159: | **空鼓率** | **0%（绝对禁止）** ⚠️ | 必须满粘 |
+- [ ] L160: | **胶粘剂开放时间** | ≤ 20 分钟（30°C环境）⚠️ | 印尼高温缩短可操作时间 |
+- [ ] L161: | **留缝宽度** | 1.5–3.0mm ⚠️ | 为抗震预留变形空间 |
+- [ ] L188: - *验收*：平整度≤1mm/2m；相邻板高低差≤0.3mm ⚠️；卡扣到位。
 
-### Sintered Stone岩板（15 处）
+### Metal Baseboard Installation金属踢脚线安装工艺（2 处）
 
-- [ ] L23: size: 1200×2400mm / 900×1800mm ⚠️
-- [ ] L24: thickness: 6-12mm ⚠️
-- [ ] L29: per_m2: 650000 ⚠️
-- [ ] L57: Sintered stone is the flagship material of Indonesian premium interiors — the default choice for living-room feature ...
-- [ ] L63: - **Durability (Indonesia climate)**: 高湿高盐雾（巴厘岛沿海）下表现优异；基层湿气须用防潮底涂隔离 ⚠️
-- [ ] L71: - **施工禁忌**：严禁普通切割机手动切割（崩边）；需水刀/桥切 ⚠️；搬运必须吸盘架双人作业；印尼雨季进场注意包装防潮
-- [ ] L78: ### Supplier Reference (Jakarta) ⚠️
-- [ ] L80: - 渠道：雅加达建材进口商（Tanjung Priok 港清关）、品牌代理展厅（MKG/PIK 区域）⚠️
-- [ ] L81: - 国产岩板（新明珠类）价格约进口的 50-60%，纹理与平整度有差距 ⚠️
-- [ ] L88: 岩板是印尼高端室内的旗舰材料——客厅背景墙与大面无缝地面的默认选项。物理性能极佳（莫氏 6+ 硬度、吸水率趋零、耐高温），但施工失败会抹平一切优势：单片 1200×2400 岩板价值 Rp 2–4 百万 ⚠️，破损不可修复。
-- [ ] L94: - **耐久性（印尼气候）**：高湿高盐雾（巴厘岛沿海）表现优异；基层湿气需防潮底涂隔离 ⚠️
-- [ ] L102: - **施工禁忌**：严禁手动切割（崩边），需水刀/桥切 ⚠️；吸盘架双人搬运；雨季进场防包装受潮
-- [ ] L109: ### 供应商参考（雅加达）⚠️
-- [ ] L111: - 渠道：雅加达建材进口商（Tanjung Priok 港清关）、品牌代理展厅 ⚠️
-- [ ] L112: - 国产岩板价格约进口的 50-60%，纹理与平整度有差距 ⚠️
+- [ ] L64: |**Material Thickness**|1.2–2.0mm ⚠️|—|
+- [ ] L139: |**材料厚度**|1.2–2.0mm ⚠️|—|
+
+### Microcement Wall Finishing微水泥墙面工艺（12 处）
+
+- [ ] L66: | **Total Finished Thickness** | 2.0–3.5mm ⚠️ | Depending on substrate flatness |
+- [ ] L67: | **Substrate Flatness (Pre-work)** | ≤ 1.5mm / 2m ⚠️ | Must be smoother than tile substrate |
+- [ ] L68: | **Crack-Bridging Mesh** | **Mandatory** for all walls (≥ 160g/m²) ⚠️ | Anti-seismic / anti-shrinkage |
+- [ ] L69: | **Ambient Temp. for Curing** | 15–30°C ⚠️ | Avoid direct sunlight and rain |
+- [ ] L70: | **Relative Humidity (RH)** | **≤ 75%** during application ⚠️ | Critical for Indonesia's rainy season |
+- [ ] L108: | **Adhesion Strength** | ≥ 1.0 MPa ⚠️ | Cross-cut tape test (ISO 2409) |
+- [ ] L131: | **总完成厚度** | 2.0–3.5mm ⚠️ | 依基层平整度调整 |
+- [ ] L132: | **施工前基层平整度** | ≤ 1.5mm / 2m ⚠️ | 须比铺砖基层更平 |
+- [ ] L133: | **抗裂网格布** | **强制使用**（≥160g/m²）⚠️ | 抗震/抗收缩 |
+- [ ] L134: | **养护环境温度** | 15–30°C ⚠️ | 避免阳光直射和雨水 |
+- [ ] L135: | **施工相对湿度（RH）** | **≤ 75%** ⚠️ | 对印尼雨季至关重要 |
+- [ ] L173: | **附着强度** | ≥1.0 MPa ⚠️ | 划格法（ISO 2409） |
+
+### Natural Stone Flooring Installation 天然石材地面安装（8 处）
+
+- [ ] L63: | **Stone Moisture Content (Pre-install)** | **≤ 3%** ⚠️ | Store in ventilated area for 7 days before use |
+- [ ] L65: | **Substrate Moisture** | **< 6%** (stricter than tiles) ⚠️ | High moisture = efflorescence risk |
+- [ ] L68: | **Epoxy Pot Life** | ≤ 30 minutes (at 30°C) ⚠️ | Small-batch mixing required |
+- [ ] L69: | **Joint Width** | 2–3mm (floor) / 3–5mm (commercial) ⚠️ | Allows for thermal/seismic expansion |
+- [ ] L133: | **石材含水率（铺贴前）** | **≤ 3%** ⚠️ | 到场后通风放置7天平衡 |
+- [ ] L135: | **基层含水率** | **< 6%**（严于瓷砖）⚠️ | 含水率=泛碱风险指标 |
+- [ ] L138: | **环氧可操作时间** | ≤ 30分钟（30°C环境）⚠️ | 必须小批量拌合 |
+- [ ] L139: | **留缝宽度** | 2–3mm（地面）/ 3–5mm（商业）⚠️ | 预留热胀/地震伸缩 |
+
+### Premium Wall Paint -Art Paint Finish（14 处）
+
+- [ ] L67: | **Substrate Moisture Content** | **< 8%** (mandatory test) ⚠️ | Higher = efflorescence risk |
+- [ ] L68: | **Substrate pH Value** | **< 10** (neutralized) ⚠️ | High alkalinity causes yellowing |
+- [ ] L69: | **Substrate Flatness (Pre-paint)** | **≤ 1mm / 2m** ⚠️ | Prepared by [[ribbed-screed-gauging-strips]] + fine putty |
+- [ ] L70: | **Ambient Temperature** | 15–30°C ⚠️ | — |
+- [ ] L71: | **Relative Humidity (RH)** | **≤ 80%** (ideal <75%) ⚠️ | High RH causes bubbling & mold |
+- [ ] L75: | **Recoat Interval** | 4–6 hours (at 30°C, 70% RH) ⚠️ | — |
+- [ ] L76: | **Full Cure Before Use** | 7 days (for chemical curing) ⚠️ | — |
+- [ ] L145: | **基层含水率** | **< 8%**（强制检测）⚠️ | 超标=泛碱风险 |
+- [ ] L146: | **基层pH值** | **< 10**（中和处理）⚠️ | 高碱导致黄变 |
+- [ ] L147: | **基层平整度（涂装前）** | **≤ 1mm / 2m** ⚠️ | 由冲筋找平+细面墙泥实现 |
+- [ ] L148: | **环境温度** | 15–30°C ⚠️ | — |
+- [ ] L149: | **相对湿度（RH）** | **≤ 80%**（理想<75%）⚠️ | 高湿导致起泡和霉变 |
+- [ ] L153: | **重涂间隔** | 4–6小时（30°C，70% RH）⚠️ | — |
+- [ ] L154: | **使用前完全固化** | 7天（化学固化）⚠️ | — |
+
+### Ribbed Screed -Gauging Strips Leveling 冲筋找平（10 处）
+
+- [ ] L60: | **Rib (Gauging Strip) Spacing** | **≤ 1.2m** (vertical) ⚠️ | Ensures straightedge rigidity without bowing |
+- [ ] L61: | **Rib Cross-Section** | 30–50mm wide × 10–25mm thick ⚠️ | Thickness = maximum substrate deviation + 5mm minimum |
+- [ ] L62: | **Final Plane Flatness** | **≤ 2mm / 2m** ⚠️ | Critical baseline for large slabs/microcement |
+- [ ] L63: | **Final Plane Verticality** | **≤ 2mm / 2m** ⚠️ | For vertical wall applications |
+- [ ] L65: | **Open Working Time** | ≥ 45 minutes (at 32°C) ⚠️ | Without retarder, sets in < 20 mins |
+- [ ] L131: | **筋条（冲筋）间距** | **≤ 1.2m** ⚠️ | 保证2m刮杠刚性不挠曲 |
+- [ ] L132: | **筋条截面尺寸** | 30–50mm宽 × 10–25mm厚 ⚠️ | 厚度=基层最大偏差+5mm余量 |
+- [ ] L133: | **完成面平整度** | **≤ 2mm / 2m** ⚠️ | 大板/微水泥硬性门槛 |
+- [ ] L134: | **完成面垂直度（墙面）** | **≤ 2mm / 2m** ⚠️ | — |
+- [ ] L136: | **可操作时间** | ≥ 45分钟（32°C环境）⚠️ | 无缓凝剂时<20分钟即凝结 |
+
+### Sanitary Ware Installation卫浴洁具安装工艺（4 处）
+
+- [ ] L75: |**Basin Mounting Height**|800–850mm (finished floor to basin rim) ⚠️|User comfort standard|
+- [ ] L76: |**Faucet Flow Rate**|≤ 9 L/min (Indonesia water pressure: 1–3 bar) ⚠️|—|
+- [ ] L203: |**洗手盆安装高度**|800–850mm（完成面至盆沿）⚠️|人体工学标准|
+- [ ] L204: |**龙头流量**|≤ 9 L/min（印尼水压：1–3 bar）⚠️|—|
+
+### Wallpaper - Fabric Wallcovering Installation铺贴工艺（12 处）
+
+- [ ] L60: | **Substrate Flatness (Pre-work)** | **≤ 1.5mm / 2m** ⚠️ | Any deviation >1.5mm will show through |
+- [ ] L61: | **Substrate Moisture Content** | **< 8%** (mandatory test) ⚠️ | Critical for Indonesia's humid climate |
+- [ ] L62: | **Ambient Temperature** | 15–30°C ⚠️ | — |
+- [ ] L63: | **Relative Humidity (RH)** | **≤ 75%** during application ⚠️ | Use dehumidifier if exceeding |
+- [ ] L64: | **Adhesive Open Time** | 5–10 minutes (at 30°C) ⚠️ | Indonesia's heat shortens working window |
+- [ ] L66: | **Drying Time Before Trimming** | 24–48 hours ⚠️ | Prevents shrinkage gaps |
+- [ ] L125: | **施工前基层平整度** | **≤ 1.5mm / 2m** ⚠️ | 偏差>1.5mm会透出 |
+- [ ] L126: | **基层含水率** | **< 8%（强制检测）** ⚠️ | 印尼高湿气候关键指标 |
+- [ ] L127: | **环境温度** | 15–30°C ⚠️ | — |
+- [ ] L128: | **施工相对湿度（RH）** | **≤ 75%** ⚠️ | 超标须使用除湿机 |
+- [ ] L129: | **胶粘剂开放时间** | 5–10分钟（30°C环境）⚠️ | 高温缩短可操作窗口 |
+- [ ] L131: | **裁切前干燥时间** | 24–48小时 ⚠️ | 防止收缩产生缝隙 |
+
+### Wet Method Tiling湿铺法地砖铺贴（18 处）
+
+- [ ] L64: - **Thickness**: 30–50mm ⚠️
+- [ ] L65: - **Flatness Tolerance**: < 3mm per 2m straightedge ⚠️
+- [ ] L66: - **Hollow Ratio Standard**: < 3% per tile (main corridors must have zero hollow spots) ⚠️
+- [ ] L75: - *Acceptance*: Flatness tolerance ≤ 3mm per 2m ⚠️.
+- [ ] L83: - *Acceptance*: All corners flush; adjacent tile height difference ≤ 0.5mm ⚠️.
+- [ ] L95: - *Acceptance*: Joint width uniform (1.5–2.5mm) ⚠️; sealant color matched to tile.
+- [ ] L99: | Hollow Ratio | Corner hollow < 3% per tile; **zero hollow** on main walkways ⚠️ | Tapping sound test |
+- [ ] L100: | Flatness | Gap ≤ 1mm under 2m straightedge ⚠️ | — |
+- [ ] L102: | Joint Width | Uniform 1.5–2.5mm ⚠️ | Visual + caliper |
+- [ ] L122: - **铺贴厚度**：30–50mm ⚠️
+- [ ] L123: - **平整度公差**：2m 靠尺检查，误差 < 3mm ⚠️
+- [ ] L124: - **空鼓率标准**：单块砖边角空鼓 < 3%，主要通道严禁空鼓 ⚠️
+- [ ] L133: - *验收*：平整度误差 < 3mm/2m ⚠️。
+- [ ] L141: - *验收*：四角平整，相邻砖高差 < 0.5mm ⚠️。
+- [ ] L153: - *验收*：缝宽 1.5–2.5mm 均匀 ⚠️，美缝颜色与砖色协调。
+- [ ] L157: | 空鼓率 | 单块砖边角空鼓 < 3%，主要通道**严禁空鼓** ⚠️ | 敲击听音法 |
+- [ ] L158: | 平整度 | 2m 靠尺检查，缝隙 < 1mm ⚠️ | — |
+- [ ] L160: | 缝宽 | 1.5–2.5mm 均匀一致 ⚠️ | 目测 + 卡尺 |
+
+### Wood Veneer Panel Wall Installation木饰面挂板工艺（10 处）
+
+- [ ] L64: | **Veneer Panel Thickness** | 3–6mm (backed with plywood/MDF) ⚠️ | — |
+- [ ] L65: | **Substrate Flatness** | ≤ 2mm / 2m ⚠️ | For direct-bond method |
+- [ ] L66: | **Expansion Joint Width** | **3–5mm** (at all panel junctions) ⚠️ | Mandatory for humidity movement |
+- [ ] L67: | **Expansion Joint Spacing** | ≤ 2.4m (horizontal) / ≤ 1.2m (vertical) ⚠️ | — |
+- [ ] L68: | **Moisture Content of Veneer** | **8–12%** (at installation) ⚠️ | Must match ambient equilibrium |
+- [ ] L132: | **饰面板厚度** | 3–6mm（背衬胶合板/MDF）⚠️ | — |
+- [ ] L133: | **基层平整度** | ≤ 2mm / 2m ⚠️ | 直接粘贴法适用 |
+- [ ] L134: | **伸缩缝宽度** | **3–5mm**（所有板缝处）⚠️ | 湿度变形强制项 |
+- [ ] L135: | **伸缩缝间距** | 水平≤2.4m / 垂直≤1.2m ⚠️ | — |
+- [ ] L136: | **饰面板含水率** | **8–12%**（安装时）⚠️ | 须与环境平衡含水率匹配 |
+
+
+---
+全库共 **437 处 ⚠️**。校对完重跑 `scripts/generate_checklist.py` 核对清零。
