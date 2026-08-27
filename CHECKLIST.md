@@ -29,7 +29,7 @@
 | 工期并行系数 = 0.7 / 斋月系数 = 1.3 |  |
 
 
-## 第一批 · 材料单价（🔴 敏感度最高，先打）（76 处）
+## 第一批 · 材料单价（🔴 敏感度最高，先打）（104 处）
 
 ### Art Paint艺术漆（16 处）
 
@@ -104,6 +104,24 @@
 - [ ] L108: ### 供应商参考（雅加达）⚠️
 - [ ] L110: - 渠道：进口品牌印尼代理；警惕本地替代品——成膜体系不完整，一年后开裂高发 ⚠️
 
+### SPC Flooring SPC石塑地板（15 处）
+
+- [ ] L23: size: 1220×180mm 常规 ⚠️
+- [ ] L24: thickness: 4-5mm ⚠️
+- [ ] L29: per_m2: 160000 ⚠️
+- [ ] L58: - **Scratch resistance**: 中-高（取决于耐磨层 0.3-0.5mm）⚠️
+- [ ] L60: - **Durability (Indonesia climate)**: 优异——防水防白蚁，一楼/沿海可用；暴晒阳台区需防褪色 ⚠️
+- [ ] L63: 远看类木地板；近看与侧光下质感弱于真木——premium 5mm 级（Marvel 类）纹理明显更真 ⚠️。
+- [ ] L68: - **施工禁忌**：基层平整度 ≤3mm/2m 仍是铁律（锁扣断裂/响声根源）⚠️；周边 8mm 伸缩缝不可省；避免阳光暴晒区域通铺 ⚠️
+- [ ] L75: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L77: - 渠道：本地建材市场多品牌；Marvel 等 premium 线经品牌经销 ⚠️
+- [ ] L88: - **耐刮性**：中-高（看耐磨层 0.3-0.5mm）⚠️
+- [ ] L90: - **耐久性（印尼气候）**：优异——防水防白蚁，一楼/沿海可用；暴晒区防褪色 ⚠️
+- [ ] L93: 远看类木；近看与侧光下质感弱于真木——premium 5mm 级纹理明显更真 ⚠️。
+- [ ] L98: - **施工禁忌**：基层 ≤3mm/2m 铁律（锁扣断裂/响声根源）⚠️；8mm 伸缩缝不可省；暴晒区勿通铺 ⚠️
+- [ ] L105: ### 供应商参考（雅加达）⚠️
+- [ ] L107: - 渠道：本地建材市场多品牌；premium 线品牌经销 ⚠️
+
 ### Sintered Stone岩板（15 处）
 
 - [ ] L23: size: 1200×2400mm / 900×1800mm ⚠️
@@ -121,6 +139,22 @@
 - [ ] L109: ### 供应商参考（雅加达）⚠️
 - [ ] L111: - 渠道：雅加达建材进口商（Tanjung Priok 港清关）、品牌代理展厅 ⚠️
 - [ ] L112: - 国产岩板价格约进口的 50-60%，纹理与平整度有差距 ⚠️
+
+### Wood Flooring木地板（13 处）
+
+- [ ] L23: size: 1200×190mm 常规 ⚠️
+- [ ] L24: thickness: 8-15mm ⚠️
+- [ ] L29: per_m2: 300000 ⚠️
+- [ ] L60: - **Maintenance**: 中——忌积水，拖地半干 ⚠️
+- [ ] L61: - **Durability (Indonesia climate)**: 高湿是头号敌人：必须防潮垫 + 周边 8-10mm 伸缩缝；一楼/地面层慎用，优先楼上 ⚠️
+- [ ] L69: - **施工禁忌**：基层含水率超标即停工（雨季重点）⚠️；伸缩缝不足必起拱；到货后现场适应 48-72 小时 ⚠️
+- [ ] L76: ### Supplier Reference (Jakarta) ⚠️
+- [ ] L78: - 渠道：Golden Crown/Kendo 经销商；进口实木复合经品牌代理 ⚠️
+- [ ] L90: - **维护**：中——忌积水 ⚠️
+- [ ] L91: - **耐久性（印尼气候）**：高湿头号敌人：防潮垫 + 周边 8-10mm 伸缩缝；一楼慎用 ⚠️
+- [ ] L99: - **施工禁忌**：基层含水率超标停工 ⚠️；伸缩缝不足必起拱；现场适应 48-72 小时 ⚠️
+- [ ] L106: ### 供应商参考（雅加达）⚠️
+- [ ] L108: - 渠道：Golden Crown/Kendo 经销商；进口品牌代理 ⚠️
 
 
 ## 第二批 · 人工日薪与效率（🟡 中国技工日薪优先）（69 处）
@@ -204,7 +238,7 @@
 - [ ] L181: │   └── 无监督产出不可靠 ⚠️ → 监督成本入预算
 
 
-## 第三批 · 工时定额（🟢 可最后过）（168 处）
+## 第三批 · 工时定额（🟢 可最后过）（350 处）
 
 ### WorkHour Bathroom Waterproofing - China Skilled（12 处）
 
@@ -333,6 +367,96 @@
 - [ ] L61: - **日薪参考**：Rp 120,000–180,000 ⚠️
 - [ ] L66: - **难度折算**：大板单片价值高、破损不可逆——普工触碰即构成风险敞口，抬铺仅限受过训练的技工双人组合 ⚠️
 
+### WorkHour Microcement - China Skilled（14 处）
+
+- [ ] L42: - **Unit work hour**: 0.7 man-hours/m² ⚠️（底层批刮+抗裂网铺设+面层 2 遍+罩面剂，按展开面积计）
+- [ ] L43: - **Reference duration**: ~0.9 man-days per 10m² ⚠️（不含层间干燥等待）
+- [ ] L44: - **Daily rate reference**: Rp 450,000–650,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L48: - **Rainy season**: 层间干燥时间延长（湿度 >80% RH），总工期 +1 工日/10m²；罩面前含水率强制检测 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 弧形/异形面上浮 50%；墙地一体无缝收边上浮 30%；基层平整度 >2mm/2m 须先冲筋找平（另计 [[workhour-screed-leveling-china-ski...
+- [ ] L52: 行业经验估算：微水泥熟练工完整四遍体系效率约 10–15 m²/工日（含批刮与罩面，不含干燥等待），取中值 12 m²/工日 ≈ 0.67 工时/m²，取整 0.7 ⚠️（与 [[china-skilled-labor]] 效率字段一...
+- [ ] L59: - **单位工时**：0.7 工时/m² ⚠️（底层批刮+抗裂网铺设+面层 2 遍+罩面剂，按展开面积计）
+- [ ] L60: - **参考工期**：10m² 约 0.9 工日 ⚠️（不含层间干燥等待）
+- [ ] L61: - **日薪参考**：Rp 450,000–650,000 ⚠️
+- [ ] L64: - **斋月/节假日**：本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L65: - **雨季**：层间干燥时间延长（湿度 >80% RH），总工期 +1 工日/10m²；罩面前含水率强制检测 ⚠️
+- [ ] L66: - **难度折算**：弧形/异形面上浮 50%；墙地一体无缝收边上浮 30%；基层平整度 >2mm/2m 须先冲筋找平（另计 [[workhour-screed-leveling-china-skilled]]）⚠️
+- [ ] L69: 行业经验估算：微水泥熟练工完整四遍体系效率约 10–15 m²/工日（含批刮与罩面，不含干燥等待），取中值 12 m²/工日 ≈ 0.67 工时/m²，取整 0.7 ⚠️（与 [[china-skilled-labor]] 效率字段一...
+
+### WorkHour Microcement - Indonesian Skilled（12 处）
+
+- [ ] L43: - **Unit work hour**: 1.2 man-hours/m² ⚠️（**不推荐**——四遍批刮依赖熟练手感，本级仅限中国技工指导下的底层批刮；面层纹理效果无法保证，返工风险计 25% 余量）
+- [ ] L44: - **Reference duration**: ~1.5 man-days per 10m² ⚠️
+- [ ] L45: - **Daily rate reference**: Rp 200,000–300,000 ⚠️
+- [ ] L48: - **Ramadan / holidays**: 斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L49: - **Rainy season**: 层间干燥时间延长，总工期 +1 工日/10m² ⚠️
+- [ ] L50: - **Difficulty adjustment**: KG 共识——微水泥为**强制中国技工**工艺（[[microcement-wall-finishing]]）。派本级仅适用于：底层批刮工序分包、且面层由中国技工收光。整套派本...
+- [ ] L60: - **单位工时**：1.2 工时/m² ⚠️（**不推荐**——四遍批刮依赖熟练手感，本级仅限中国技工指导下的底层批刮；面层纹理效果无法保证，返工风险计 25% 余量）
+- [ ] L61: - **参考工期**：10m² 约 1.5 工日 ⚠️
+- [ ] L62: - **日薪参考**：Rp 200,000–300,000 ⚠️
+- [ ] L65: - **斋月/节假日**：斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L66: - **雨季**：层间干燥时间延长，总工期 +1 工日/10m² ⚠️
+- [ ] L67: - **难度折算**：KG 共识——微水泥为**强制中国技工**工艺（[[microcement-wall-finishing]]）。派本级仅适用于底层批刮分包、面层由中国技工收光；整套派本级等于主动接受返工 ⚠️
+
+### WorkHour Microcement - Local General（12 处）
+
+- [ ] L42: - **Unit work hour**: Microcement application **N/A — forbidden for general labor** ⚠️
+- [ ] L43: - **Auxiliary reference**: material mixing & transport ~0.4 man-day per 10m² ⚠️（技工直接指挥下；微水泥可施工窗口短，供料须连续）
+- [ ] L44: - **Daily rate reference**: Rp 120,000–180,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月体力工序效率下降约 30%，宜安排上午作业 ⚠️
+- [ ] L48: - **Rainy season**: 无显著影响（室内工序），但材料须防潮存放 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 微水泥拌料水灰比由技工定量，普工不得自行加水——搅拌不均是面层色差的高发诱因 ⚠️
+- [ ] L59: - **单位工时**：微水泥施工 **N/A——严禁普工上手** ⚠️
+- [ ] L60: - **辅助参考**：拌料搬运约 0.4 工日/10m² ⚠️（技工直接指挥下；微水泥可施工窗口短，供料须连续）
+- [ ] L61: - **日薪参考**：Rp 120,000–180,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月体力工序效率下降约 30%，宜安排上午作业 ⚠️
+- [ ] L65: - **雨季**：无显著影响（室内工序），材料须防潮存放 ⚠️
+- [ ] L66: - **难度折算**：拌料水灰比由技工定量，普工不得自行加水——搅拌不均是面层色差的高发诱因 ⚠️
+
+### WorkHour Recessed Lighting - China Skilled（12 处）
+
+- [ ] L42: - **Unit work hour**: 1.5 man-hours per meter of track run ⚠️（含预埋框安装与封板收口，筒灯点位按每 2m 轨道 1 个折算）
+- [ ] L43: - **Reference duration**: ~2 man-days per 10m track run（约 1 个客厅）⚠️
+- [ ] L44: - **Daily rate reference**: Rp 450,000–650,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L48: - **Rainy season**: 吊顶空腔凝露检查可能 +0.5 工日/项目 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 弧形轨道走向上浮 40%；多分区调光（≥4 区）上浮 20%；与智能调光联动调试另计 ⚠️
+- [ ] L59: - **单位工时**：1.5 工时/延米轨道 ⚠️（含预埋框与封板收口；筒灯点位按每 2m 轨道 1 个折算）
+- [ ] L60: - **参考工期**：10m 轨道（约 1 个客厅）约 2 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 450,000–650,000 ⚠️
+- [ ] L64: - **斋月/节假日**：本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L65: - **雨季**：吊顶空腔凝露检查可能 +0.5 工日/项目 ⚠️
+- [ ] L66: - **难度折算**：弧形轨道上浮 40%；多分区调光（≥4 区）上浮 20%；智能联动调试另计 ⚠️
+
+### WorkHour Recessed Lighting - Indonesian Skilled（12 处）
+
+- [ ] L44: - **Unit work hour**: 2.2 man-hours per meter of track run ⚠️（标准直线段）
+- [ ] L45: - **Reference duration**: ~2.8 man-days per 10m track run ⚠️
+- [ ] L46: - **Daily rate reference**: Rp 200,000–300,000 ⚠️
+- [ ] L49: - **Ramadan / holidays**: 斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L50: - **Rainy season**: 同中国技工，空腔凝露检查 ⚠️
+- [ ] L51: - **Difficulty adjustment**: 型材边缘批灰精细度不足，返工风险计 15% 余量 ⚠️；**弧形轨道禁止本级独立承担**，转 [[china-skilled-labor]]
+- [ ] L61: - **单位工时**：2.2 工时/延米轨道 ⚠️（标准直线段）
+- [ ] L62: - **参考工期**：10m 轨道约 2.8 工日 ⚠️
+- [ ] L63: - **日薪参考**：Rp 200,000–300,000 ⚠️
+- [ ] L66: - **斋月/节假日**：斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L67: - **雨季**：空腔凝露检查 ⚠️
+- [ ] L68: - **难度折算**：型材边缘批灰精细度不足，返工风险计 15% 余量 ⚠️；**弧形轨道禁止本级独立承担**，转 [[china-skilled-labor]]
+
+### WorkHour Recessed Lighting - Local General（10 处）
+
+- [ ] L42: - **Unit work hour**: N/A for installation — **forbidden**（毫米级容差工序）⚠️
+- [ ] L43: - **Auxiliary reference**: material transport & cleanup ~0.3 man-day per 10m track run ⚠️（技工直接指挥下）
+- [ ] L44: - **Daily rate reference**: Rp 120,000–180,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月体力工序效率下降约 30% ⚠️
+- [ ] L49: - **Difficulty adjustment**: 轨道/预埋框为精密件，搬运需防磕碰变形——变形的轨道装上去就是波浪弯 ⚠️
+- [ ] L59: - **单位工时**：安装施工 **N/A——严禁普工上手** ⚠️
+- [ ] L60: - **辅助参考**：材料搬运与清理约 0.3 工日/10m 轨道 ⚠️（技工直接指挥下）
+- [ ] L61: - **日薪参考**：Rp 120,000–180,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月体力工序效率下降约 30% ⚠️
+- [ ] L66: - **难度折算**：轨道/预埋框为精密件，搬运防磕碰变形——变形轨道装上即波浪弯 ⚠️
+
 ### WorkHour Ribbed Screed Leveling - China Skilled（12 处）
 
 - [ ] L42: - **Unit work hour**: 0.8 man-hours/m² ⚠️（按墙面面积计）
@@ -375,6 +499,98 @@
 - [ ] L62: - **日薪参考**：Rp 120,000–180,000 ⚠️
 - [ ] L65: - **斋月/节假日**：斋月体力工序效率下降约 30% ⚠️
 - [ ] L67: - **难度折算**：冲筋条定位与刮平涉及测量/容差判断，普工全程不得上手 ⚠️
+
+### WorkHour Trimless Edge - China Skilled（12 处）
+
+- [ ] L42: - **Unit work hour**: 0.6 man-hours per linear meter ⚠️（型材安装 + 批嵌 + 清缝；不含基层找平）
+- [ ] L43: - **Reference duration**: ~1.5 man-days per 20m room perimeter ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 450,000–650,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 本人不受影响 ⚠️
+- [ ] L48: - **Rainy season**: 高湿膨胀预留缝按上限取 5mm；不影响工时 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 阴阳角密集（每间房 >6 角）上浮 25%；无框门套每樘 +0.5 工日 ⚠️
+- [ ] L59: - **单位工时**：0.6 工时/延米 ⚠️（型材安装 + 批嵌 + 清缝；不含基层找平）
+- [ ] L60: - **参考工期**：20m 房间周长约 1.5 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 450,000–650,000 ⚠️
+- [ ] L64: - **斋月/节假日**：本人不受影响 ⚠️
+- [ ] L65: - **雨季**：膨胀缝按上限 5mm；不影响工时 ⚠️
+- [ ] L66: - **难度折算**：阴阳角密集（>6 角/间）上浮 25%；无框门套每樘 +0.5 工日 ⚠️
+
+### WorkHour Trimless Edge - Indonesian Skilled（12 处）
+
+- [ ] L44: - **Unit work hour**: 0.9 man-hours per linear meter ⚠️（**仅限批嵌埋入段**；型材安装转 [[china-skilled-labor]]）
+- [ ] L45: - **Reference duration**: ~2.2 man-days per 20m ⚠️
+- [ ] L46: - **Daily rate reference**: Rp 200,000–300,000 ⚠️
+- [ ] L49: - **Ramadan / holidays**: 斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L50: - **Rainy season**: 无显著影响 ⚠️
+- [ ] L51: - **Difficulty adjustment**: 侧光验收标准下棱线返工风险计 20% 余量 ⚠️；角部细部必须由高等级技工收
+- [ ] L61: - **单位工时**：0.9 工时/延米 ⚠️（**仅限批嵌埋入段**；型材安装转 [[china-skilled-labor]]）
+- [ ] L62: - **参考工期**：20m 约 2.2 工日 ⚠️
+- [ ] L63: - **日薪参考**：Rp 200,000–300,000 ⚠️
+- [ ] L66: - **斋月/节假日**：斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L67: - **雨季**：无显著影响 ⚠️
+- [ ] L68: - **难度折算**：侧光验收下棱线返工风险计 20% 余量 ⚠️；角部细部必须高等级技工收
+
+### WorkHour Trimless Edge - Local General（10 处）
+
+- [ ] L42: - **Unit work hour**: N/A for profile/finishing — **forbidden** ⚠️
+- [ ] L43: - **Auxiliary reference**: protection film & cleanup ~0.2 man-day per 20m ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 120,000–180,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月体力工序效率下降约 30% ⚠️
+- [ ] L49: - **Difficulty adjustment**: 型材为精密外露件，搬运防磕碰——磕凹的型材装上去整面墙报废 ⚠️
+- [ ] L59: - **单位工时**：型材/面层施工 **N/A——严禁普工上手** ⚠️
+- [ ] L60: - **辅助参考**：贴保护膜与清理约 0.2 工日/20m ⚠️
+- [ ] L61: - **日薪参考**：Rp 120,000–180,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月体力工序效率下降约 30% ⚠️
+- [ ] L66: - **难度折算**：型材为精密外露件，搬运防磕碰——磕凹型材上墙即整面报废 ⚠️
+
+### WorkHour Wall Paint - China Skilled（14 处）
+
+- [ ] L42: - **Unit work hour**: 0.15 man-hours/m² ⚠️（含底漆 1 遍 + 面漆 2 遍；艺术漆肌理效果另计上浮）
+- [ ] L43: - **Reference duration**: ~0.2 man-days per 10m² ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 450,000–650,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L48: - **Rainy season**: 环境湿度 >80% RH 时须停工或除湿——印尼雨季涂装间隔期延长，总工期 +0.5 工日/10m² ⚠️
+- [ ] L49: - **Difficulty adjustment**: 威尼斯石膏/金属漆等艺术效果上浮 50%；深色漆遮盖力差需增加一遍面漆上浮 30%；基层含水率 >8% 强制停工 ⚠️
+- [ ] L52: 行业经验估算：熟练涂装工辊涂效率约 60–80 m²/工日（含底漆与两遍面漆），取中高值 67 m²/工日 ≈ 0.12 工时/m²，叠加艺术漆收边与纹理施工余量至 0.15 ⚠️（与 [[china-skilled-labor]] ...
+- [ ] L59: - **单位工时**：0.15 工时/m² ⚠️（含底漆 1 遍 + 面漆 2 遍；艺术漆肌理效果另计上浮）
+- [ ] L60: - **参考工期**：10m² 约 0.2 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 450,000–650,000 ⚠️
+- [ ] L64: - **斋月/节假日**：本人不受影响；混编班组进度受印尼工友出勤影响 ⚠️
+- [ ] L65: - **雨季**：湿度 >80% RH 须停工或除湿，涂装间隔期延长，总工期 +0.5 工日/10m² ⚠️
+- [ ] L66: - **难度折算**：威尼斯石膏/金属漆等艺术效果上浮 50%；深色漆增加一遍面漆上浮 30%；基层含水率 >8% 强制停工 ⚠️
+- [ ] L69: 行业经验估算：熟练涂装工辊涂效率约 60–80 m²/工日（含底漆与两遍面漆），取中高值 67 m²/工日 ≈ 0.12 工时/m²，叠加艺术漆收边与纹理施工余量至 0.15 ⚠️（与 [[china-skilled-labor]] ...
+
+### WorkHour Wall Paint - Indonesian Skilled（14 处）
+
+- [ ] L42: - **Unit work hour**: 0.28 man-hours/m² ⚠️（含底漆 1 遍 + 面漆 2 遍；仅限常规平涂效果）
+- [ ] L43: - **Reference duration**: ~0.35 man-days per 10m² ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 200,000–300,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L48: - **Rainy season**: 湿度 >80% RH 须停工或除湿，涂装间隔期延长，总工期 +0.5 工日/10m² ⚠️
+- [ ] L49: - **Difficulty adjustment**: 艺术漆肌理/威尼斯石膏效果**不推荐**本级施工（纹理手感依赖长期训练），如坚持派本级需上浮 50% 并接受效果折扣 ⚠️
+- [ ] L52: 行业经验估算：印尼本地涂装工常规效率约 30–40 m²/工日（含底漆与两遍面漆），取中值 35 m²/工日 ≈ 0.23 工时/m²，叠加高端涂装基层检查与收边余量至 0.28 ⚠️（与 [[indonesian-skilled-l...
+- [ ] L59: - **单位工时**：0.28 工时/m² ⚠️（含底漆 1 遍 + 面漆 2 遍；仅限常规平涂效果）
+- [ ] L60: - **参考工期**：10m² 约 0.35 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 200,000–300,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L65: - **雨季**：湿度 >80% RH 须停工或除湿，涂装间隔期延长，总工期 +0.5 工日/10m² ⚠️
+- [ ] L66: - **难度折算**：艺术漆肌理/威尼斯石膏效果**不推荐**本级施工，坚持派本级需上浮 50% 并接受效果折扣 ⚠️
+- [ ] L69: 行业经验估算：印尼本地涂装工常规效率约 30–40 m²/工日（含底漆与两遍面漆），取中值 35 m²/工日 ≈ 0.23 工时/m²，叠加高端涂装基层检查与收边余量至 0.28 ⚠️（与 [[indonesian-skilled-l...
+
+### WorkHour Wall Paint - Local General（12 处）
+
+- [ ] L43: - **Unit work hour**: Painting application **N/A — forbidden for general labor** ⚠️
+- [ ] L44: - **Auxiliary reference**: masking & sanding assistance ~0.3 man-day per 10m² ⚠️（技工直接指挥下）
+- [ ] L45: - **Daily rate reference**: Rp 120,000–180,000 ⚠️
+- [ ] L48: - **Ramadan / holidays**: 斋月体力工序效率下降约 30%，宜安排上午作业 ⚠️
+- [ ] L49: - **Rainy season**: 无显著影响（室内工序），但打磨粉尘在潮湿环境沉降慢，需加强通风 ⚠️
+- [ ] L50: - **Difficulty adjustment**: 遮蔽不到位是高端涂装污染成品的高发诱因——遮蔽标准由技检验收后方可开涂 ⚠️
+- [ ] L60: - **单位工时**：涂装施工 **N/A——严禁普工上手** ⚠️
+- [ ] L61: - **辅助参考**：遮蔽保护+打磨辅助约 0.3 工日/10m² ⚠️（技工直接指挥下）
+- [ ] L62: - **日薪参考**：Rp 120,000–180,000 ⚠️
+- [ ] L65: - **斋月/节假日**：斋月体力工序效率下降约 30%，宜安排上午作业 ⚠️
+- [ ] L66: - **雨季**：无显著影响（室内工序），打磨粉尘在潮湿环境沉降慢，需加强通风 ⚠️
+- [ ] L67: - **难度折算**：遮蔽不到位是高端涂装污染成品的高发诱因——遮蔽标准由技检验收后方可开涂 ⚠️
 
 ### WorkHour Wet Method Tiling - China Skilled（12 处）
 
@@ -419,8 +635,53 @@
 - [ ] L65: - **斋月/节假日**：斋月体力工序效率下降约 30%，宜安排上午作业 ⚠️
 - [ ] L67: - **难度折算**：拌浆水灰比由技工定量，普工不得自行加水——空鼓高发诱因 ⚠️
 
+### WorkHour Wood SPC Flooring - China Skilled（12 处）
 
-## 第四批 · 工艺标准与容差（🟢 多为施工标准，扫读即可）（124 处）
+- [ ] L42: - **Unit work hour**: 0.5 man-hours/m²（直拼）⚠️；0.9 man-hours/m²（人字拼/鱼骨拼）⚠️
+- [ ] L43: - **Reference duration**: 直拼 ~0.6 man-day per 10m² ⚠️；人字拼 ~1.1 man-days per 10m² ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 450,000–650,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 本人不受影响 ⚠️
+- [ ] L48: - **Rainy season**: 基层含水率等待与材料现场适应（48-72h）不计入工时，但影响总工期 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 人字拼 45° 收边复杂户型上浮 25%；楼梯踏步另计 ⚠️
+- [ ] L59: - **单位工时**：0.5 工时/m²（直拼）⚠️；0.9 工时/m²（人字拼/鱼骨拼）⚠️
+- [ ] L60: - **参考工期**：直拼 10m² 约 0.6 工日 ⚠️；人字拼 10m² 约 1.1 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 450,000–650,000 ⚠️
+- [ ] L64: - **斋月/节假日**：本人不受影响 ⚠️
+- [ ] L65: - **雨季**：含水率等待与材料适应期（48-72h）不计工时但影响总工期 ⚠️
+- [ ] L66: - **难度折算**：人字拼复杂收边上浮 25%；楼梯踏步另计 ⚠️
+
+### WorkHour Wood SPC Flooring - Indonesian Skilled（12 处）
+
+- [ ] L42: - **Unit work hour**: 0.4 man-hours/m²（直拼，含防潮层与地垫）⚠️
+- [ ] L43: - **Reference duration**: ~0.5 man-day per 10m² ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 200,000–300,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L48: - **Rainy season**: 同中国技工，等待期影响总工期 ⚠️
+- [ ] L49: - **Difficulty adjustment**: 伸缩缝省略是本级最常见的偷工点——验收必须卡尺检查 ⚠️；人字拼禁止本级独立承担，转 [[china-skilled-labor]]
+- [ ] L59: - **单位工时**：0.4 工时/m²（直拼，含防潮层与地垫）⚠️
+- [ ] L60: - **参考工期**：10m² 约 0.5 工日 ⚠️
+- [ ] L61: - **日薪参考**：Rp 200,000–300,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月有效工时下降 20–30%，排期按 1.3 倍系数 ⚠️
+- [ ] L65: - **雨季**：等待期影响总工期 ⚠️
+- [ ] L66: - **难度折算**：伸缩缝省略是本级最常见偷工点——验收卡尺检查 ⚠️；人字拼禁止本级，转 [[china-skilled-labor]]
+
+### WorkHour Wood SPC Flooring - Local General（12 处）
+
+- [ ] L42: - **Unit work hour**: N/A for laying — **forbidden** ⚠️
+- [ ] L43: - **Auxiliary reference**: unpacking & plank transport ~0.2 man-day per 10m² ⚠️
+- [ ] L44: - **Daily rate reference**: Rp 120,000–180,000 ⚠️
+- [ ] L47: - **Ramadan / holidays**: 斋月体力工序效率下降约 30% ⚠️
+- [ ] L48: - **Rainy season**: 材料搬运需注意防淋雨（从货车到室内段）⚠️
+- [ ] L49: - **Difficulty adjustment**: 板材锁扣边脆，搬运防摔——锁扣摔损的板铺上去就是日后开缝源 ⚠️
+- [ ] L59: - **单位工时**：铺设施工 **N/A——严禁普工上手** ⚠️
+- [ ] L60: - **辅助参考**：拆包与板材搬运约 0.2 工日/10m² ⚠️
+- [ ] L61: - **日薪参考**：Rp 120,000–180,000 ⚠️
+- [ ] L64: - **斋月/节假日**：斋月体力工序效率下降约 30% ⚠️
+- [ ] L65: - **雨季**：货车到室内段搬运防淋雨 ⚠️
+- [ ] L66: - **难度折算**：锁扣边脆，搬运防摔——锁扣摔损的板即日后开缝源 ⚠️
+
+
+## 第四批 · 工艺标准与容差（🟢 多为施工标准，扫读即可）（218 处）
 
 ### Custom Built-in Wardrobe -Millwork Installation 定制集成（6 处）
 
@@ -488,6 +749,37 @@
 - [ ] L135: | **施工相对湿度（RH）** | **≤ 75%** ⚠️ | 对印尼雨季至关重要 |
 - [ ] L173: | **附着强度** | ≥1.0 MPa ⚠️ | 划格法（ISO 2409） |
 
+### Minimalist Trimless Edge极简收口（28 处）
+
+- [ ] L68: - **Shadow gap width**: 10–15mm, deviation ≤ 0.5mm over full run ⚠️
+- [ ] L69: - **Substrate verticality**: ≤ 2mm per 2m (mandatory, via [[ribbed-screed-gauging-strips]]) ⚠️
+- [ ] L70: - **Profile embed depth**: flush ±0.5mm with finished wall plane ⚠️
+- [ ] L71: - **Floor junction clearance**: 3–5mm (Indonesia humidity expansion) ⚠️
+- [ ] L81: - *Acceptance*: Line deviation ≤ 0.5mm over full perimeter ⚠️.
+- [ ] L85: - *Acceptance*: Profile flush ±0.5mm; fixing spacing ≤ 400mm ⚠️.
+- [ ] L106: | Gap width uniformity | 10–15mm, ±0.5mm ⚠️ | Caliper at 1m intervals |
+- [ ] L107: | Profile flush | ±0.5mm to wall plane ⚠️ | Straightedge + feeler |
+- [ ] L108: | Substrate verticality | ≤ 2mm/2m ⚠️ | Pre-gate, Step 1 |
+- [ ] L109: | Edge cracking | Zero cracks at profile junction after 28d ⚠️ | Raking light |
+- [ ] L119: | Profile dented | Site traffic after install | Protection film until handover ⚠️ |
+- [ ] L120: | Humidity swelling | Gap < 3mm in wet season | 3–5mm clearance, flexible sealant at wet zones ⚠️ |
+- [ ] L127: - **Materials**: recessed aluminum shadow-gap profile (Atelier SKU 缺口 ⚠️), corner profiles.
+- [ ] L137: - **阴影缝宽度**：10–15mm，全程偏差 ≤0.5mm ⚠️
+- [ ] L138: - **基层垂平度**：≤2mm/2m（强制，经 [[ribbed-screed-gauging-strips|冲筋找平]]）⚠️
+- [ ] L139: - **型材嵌入齐平**：与完成墙面 ±0.5mm ⚠️
+- [ ] L140: - **地面交接预留**：3–5mm（印尼高湿膨胀）⚠️
+- [ ] L150: - *验收*：全线偏差 ≤0.5mm ⚠️。
+- [ ] L154: - *验收*：齐平 ±0.5mm；固定间距 ≤400mm ⚠️。
+- [ ] L175: | 缝宽均匀度 | 10–15mm，±0.5mm ⚠️ | 每 1m 卡尺测 |
+- [ ] L176: | 型材齐平 | ±0.5mm ⚠️ | 靠尺+塞尺 |
+- [ ] L177: | 基层垂平 | ≤2mm/2m ⚠️ | Step 1 生死门 |
+- [ ] L178: | 边缘开裂 | 28 天后零裂缝 ⚠️ | 侧光检查 |
+- [ ] L188: | 型材磕凹 | 安装后现场通行 | 保护贴膜至交付 ⚠️ |
+- [ ] L189: | 高湿膨胀卡死 | 雨季缝 <3mm | 3–5mm 预留，湿区柔性密封 ⚠️ |
+- [ ] L196: - **材料**：内嵌铝合金阴影缝型材（Atelier SKU 缺口 ⚠️）、角型材。
+- [ ] L229: │   ├── 缝宽 ±0.5mm ⚠️ → [[quality-control]]
+- [ ] L245: └── 高湿膨胀 → 3-5mm 预留 ⚠️
+
 ### Natural Stone Flooring Installation 天然石材地面安装（8 处）
 
 - [ ] L63: | **Stone Moisture Content (Pre-install)** | **≤ 3%** ⚠️ | Store in ventilated area for 7 days before use |
@@ -515,6 +807,44 @@
 - [ ] L149: | **相对湿度（RH）** | **≤ 80%**（理想<75%）⚠️ | 高湿导致起泡和霉变 |
 - [ ] L153: | **重涂间隔** | 4–6小时（30°C，70% RH）⚠️ | — |
 - [ ] L154: | **使用前完全固化** | 7天（化学固化）⚠️ | — |
+
+### Recessed Lighting Pre-Embedding无主灯预埋（35 处）
+
+- [ ] L69: - **Track straightness**: ≤ 2mm deviation per 3m run ⚠️
+- [ ] L70: - **Track flush tolerance**: rail face flush with finished ceiling plane, ±0.5mm ⚠️
+- [ ] L71: - **Downlight spacing**: 800–1200mm typical, per lighting design ⚠️
+- [ ] L72: - **Clearance above rail**: ≥ 50mm for heat dissipation ⚠️
+- [ ] L80: Run conduits and pull wires to each track feed point and downlight loop; leave 300mm service loops ⚠️.
+- [ ] L90: - *Acceptance*: Straightness ≤ 2mm/3m ⚠️; hanger spacing ≤ 600mm ⚠️.
+- [ ] L94: - *Acceptance*: Plane error ≤ 0.5mm ⚠️.
+- [ ] L98: - *Acceptance*: Board edge gap to profile ≤ 2mm, uniform ⚠️.
+- [ ] L106: - *Acceptance*: All circuits energized; dimming smooth; no flicker ⚠️.
+- [ ] L111: | Track straightness | ≤ 2mm per 3m ⚠️ | Laser line check |
+- [ ] L112: | Profile flush | ±0.5mm to ceiling plane ⚠️ | Feeler + straightedge |
+- [ ] L113: | Edge cracking | Zero cracks at profile edges after 28 days ⚠️ | Raking light inspection |
+- [ ] L114: | Opening precision | Board-to-profile gap ≤ 2mm uniform ⚠️ | Visual + caliper |
+- [ ] L123: | Dead spots after closing | Wiring loop too short / buried junction | 300mm service loops; junction map photographed...
+- [ ] L125: | Rainy-season condensation in rails | Humid ceiling void | Ventilate void; check before fit-off ⚠️ |
+- [ ] L131: - **Materials**: magnetic track rail (Atelier `LIGHT-TRACK-101` Rp 350,000/m ⚠️), trimless frames, premium downlights...
+- [ ] L142: - **轨道顺直度**：3m 内偏差 ≤ 2mm ⚠️
+- [ ] L143: - **轨道齐平度**：轨道面与完成吊顶面齐平，±0.5mm ⚠️
+- [ ] L144: - **射灯间距**：常规 800–1200mm，按灯光设计 ⚠️
+- [ ] L145: - **轨道上方净空**：≥ 50mm（散热）⚠️
+- [ ] L153: 布管穿线至各轨道供电点与筒灯回路，预留 300mm 检修线余量 ⚠️。
+- [ ] L163: - *验收*：顺直度 ≤2mm/3m ⚠️；吊件间距 ≤600mm ⚠️。
+- [ ] L167: - *验收*：平面误差 ≤0.5mm ⚠️。
+- [ ] L171: - *验收*：板边与型材缝隙 ≤2mm 且均匀 ⚠️。
+- [ ] L179: - *验收*：全部回路通电；调光顺滑无频闪 ⚠️。
+- [ ] L184: | 轨道顺直度 | ≤2mm/3m ⚠️ | 激光线检查 |
+- [ ] L185: | 型材齐平 | ±0.5mm ⚠️ | 塞尺+靠尺 |
+- [ ] L186: | 边缘开裂 | 28 天后型材边缘零裂缝 ⚠️ | 侧光检查 |
+- [ ] L187: | 开口精度 | 板与型材缝 ≤2mm 均匀 ⚠️ | 目测+卡尺 |
+- [ ] L196: | 封板后死灯 | 线余量不足/接头被埋 | 留 300mm 余量；封板前拍照留底 ⚠️ |
+- [ ] L198: | 雨季轨道内凝露 | 吊顶空腔潮湿 | 空腔通风；安装灯具前检查 ⚠️ |
+- [ ] L204: - **材料**：磁吸轨道（Atelier `LIGHT-TRACK-101` Rp 350,000/m ⚠️）、无边框预埋框、防眩筒灯（`LIGHT-DOWNLIGHT-101` Rp 137,000/个 ⚠️）。
+- [ ] L239: │   ├── 顺直度 ≤2mm/3m ⚠️ → [[quality-control]]
+- [ ] L240: │   └── 齐平度 ±0.5mm ⚠️ → [[premium-wall-paint-art-finish]]
+- [ ] L256: └── 雨季空腔凝露 → 装灯前检查 ⚠️
 
 ### Ribbed Screed -Gauging Strips Leveling 冲筋找平（10 处）
 
@@ -572,6 +902,40 @@
 - [ ] L158: | 平整度 | 2m 靠尺检查，缝隙 < 1mm ⚠️ | — |
 - [ ] L160: | 缝宽 | 1.5–2.5mm 均匀一致 ⚠️ | 目测 + 卡尺 |
 
+### Wood & SPC Flooring Installation木地板SPC铺设（31 处）
+
+- [ ] L68: - **Substrate flatness**: ≤ 3mm per 2m ⚠️
+- [ ] L69: - **Substrate moisture**: ≤ 12% CM reading before laying ⚠️
+- [ ] L70: - **Expansion gap**: 8–10mm at all walls and fixed elements ⚠️
+- [ ] L71: - **Acclimatization**: 48–72 hours on site before laying ⚠️
+- [ ] L87: Plan plank direction (along main light/long axis), stagger pattern ≥300mm, first/last row width ≥ 50mm ⚠️.
+- [ ] L97: - *Acceptance*: Joints closed, no lifted edges; drift ≤ 2mm per 5m ⚠️.
+- [ ] L110: | Substrate flatness | ≤ 3mm/2m ⚠️ | Pre-gate |
+- [ ] L111: | Expansion gap | 8–10mm continuous ⚠️ | Spacer check before trims |
+- [ ] L113: | Walk test | Silent, no vertical movement ⚠️ | Full-area walk |
+- [ ] L114: | Pattern drift | ≤ 2mm per 5m ⚠️ | Straightedge |
+- [ ] L119: | Buckling (起拱) | Expansion gap too small / wet season swelling | 8-10mm gaps mandatory; rainy season use upper bound...
+- [ ] L122: | Swollen edges | Water mopping / no moisture barrier | PE barrier mandatory; damp-mop only ⚠️ |
+- [ ] L124: | Fading near windows | UV exposure (SPC) | Curtains/film in sun-exposed zones ⚠️ |
+- [ ] L141: - **基层平整度**：≤3mm/2m ⚠️
+- [ ] L142: - **基层含水率**：铺设前 ≤12%（CM 仪）⚠️
+- [ ] L143: - **伸缩缝**：周边及固定构件处 8–10mm ⚠️
+- [ ] L144: - **现场适应**：铺设前 48–72 小时 ⚠️
+- [ ] L160: 板向顺主光源/长轴；错缝 ≥300mm；首末排板宽 ≥50mm ⚠️。
+- [ ] L170: - *验收*：缝闭合无翘边；跑偏 ≤2mm/5m ⚠️。
+- [ ] L183: | 基层平整度 | ≤3mm/2m ⚠️ | 前置门 |
+- [ ] L184: | 伸缩缝 | 8–10mm 连续 ⚠️ | 收边前卡尺检查 |
+- [ ] L186: | 行走测试 | 无声、无上下浮动 ⚠️ | 全区行走 |
+- [ ] L187: | 图案跑偏 | ≤2mm/5m ⚠️ | 靠尺 |
+- [ ] L192: | 起拱 | 伸缩缝不足/雨季膨胀 | 8-10mm 强制；雨季取上限 ⚠️ |
+- [ ] L195: | 边缘泡发 | 湿拖把/无防潮层 | PE 膜强制；半干拖 ⚠️ |
+- [ ] L197: | 窗边褪色 | 紫外线暴晒（SPC） | 暴晒区窗帘/贴膜 ⚠️ |
+- [ ] L237: │   ├── 平整度 ≤3mm/2m ⚠️ → 前置门
+- [ ] L238: │   ├── 含水率 ≤12% ⚠️ → 雨季重点
+- [ ] L239: │   └── 伸缩缝 8-10mm ⚠️ → [[floor-buckling]] 防线
+- [ ] L252: ├── 高湿 → PE 防潮层强制 ⚠️
+- [ ] L253: └── 雨季 → 伸缩缝取上限 ⚠️
+
 ### Wood Veneer Panel Wall Installation木饰面挂板工艺（10 处）
 
 - [ ] L64: | **Veneer Panel Thickness** | 3–6mm (backed with plywood/MDF) ⚠️ | — |
@@ -587,4 +951,4 @@
 
 
 ---
-全库共 **437 处 ⚠️**。校对完重跑 `scripts/generate_checklist.py` 核对清零。
+全库共 **741 处 ⚠️**。校对完重跑 `scripts/generate_checklist.py` 核对清零。
