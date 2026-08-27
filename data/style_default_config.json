@@ -59,7 +59,7 @@
         "ceiling": {
           "material": null, "sku": null,
           "process": "floating-suspended-ceiling", "labor": "china-skilled-labor",
-          "note": "悬浮吊顶+阴影缝；无主灯预埋节点缺失（data_gaps）"
+          "note": "悬浮吊顶+阴影缝；无主灯场景前置 recessed-lighting-pre-embedding"
         },
         "bathroom": {
           "material": "marble-tiles", "sku": "TILE-GRANITE-102",
@@ -67,7 +67,7 @@
           "note": "前置防水强制"
         }
       },
-      "data_gaps": ["无主灯预埋 工艺节点", "吊顶材料 SKU（轻钢龙骨+石膏板体系）"]
+      "data_gaps": ["吊顶材料 SKU（轻钢龙骨+石膏板体系）", "无主灯工时定额（07_WorkHours 补录）"]
     },
     "wabi-sabi": {
       "label": "侘寂",
@@ -125,7 +125,7 @@
         "ceiling": {
           "material": null, "sku": null,
           "process": "floating-suspended-ceiling", "labor": "china-skilled-labor",
-          "note": "大平顶+无主灯；无主灯预埋节点缺失（data_gaps）"
+          "note": "大平顶+无主灯；前置 recessed-lighting-pre-embedding"
         },
         "bathroom": {
           "material": "sintered-stone", "sku": "TILE-SLAB-202",
@@ -133,7 +133,7 @@
           "note": "墙地大板一体；前置防水强制"
         }
       },
-      "data_gaps": ["无主灯预埋 工艺节点", "极简收口（无踢脚线/窄边框）工艺节点", "金属线条 SKU"]
+      "data_gaps": ["无主灯工时定额（07_WorkHours 补录）", "极简收口（无踢脚线/窄边框）工艺节点", "金属线条 SKU"]
     },
     "modern-cream": {
       "label": "现代奶油",
