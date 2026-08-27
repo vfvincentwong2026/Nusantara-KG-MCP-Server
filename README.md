@@ -10,8 +10,9 @@
 
 ## ⚡ 当前状态（先说实话）
 
-- 📦 **本仓库处于 P0 数据建设期**：MCP Server **代码尚未开工**，当前唯一动作是**录入知识数据**；
+- 📦 **本仓库处于 P0 数据建设期**：MCP Server **代码尚未开工**，主线动作是**录入知识数据**与**校对 ⚠️ 数字**；
 - 📊 **案例/照片/材料数据已在 [Nusantara-Atelier](https://github.com/vfvincentwong2026/Nusantara-Atelier) 仓库**（25 案例 + 231 张实景图 + 53 个材料 SKU），本仓库以其为**唯一事实源**向上扩展工艺/工时/人工知识层；
+- 🧮 **P1 估价骨架已落地 Atelier**（2026-08-27）：本仓库新增 `scripts/export_estimate_data.py` 把 66 个节点结构化导出为 `data/kg_estimate.json`，Atelier 侧 `lib/estimate/` 模块 + `/estimate` 内部演示页已上线；A 级对账平均偏差 42.2%→34.1%（未达 25% 线），详见 `docs/M4_A级对账报告.md`；
 - ✍️ **数据录入不手敲**：用 `templates/` 下的 AI 生成提示词 + 免费大模型批量生成，人工只校对带 ⚠️ 的数字 → 见 [数据录入工作流](#️-数据录入工作流当前唯一动作)。
 
 ---
@@ -154,9 +155,9 @@ obsidian-vault/
 ├── 02_Styles/       # 设计风格 (8种)
 ├── 03_Spaces/       # 空间类型 (12类)
 ├── 04_Materials/    # 材料库
-├── 05_Processes/    # 施工工艺 ⭐ 高端核心（P0 录入中）
-├── 06_Labor/        # 人工配置 ⭐ 印尼特色（P0 待录入）
-├── 07_WorkHours/    # 工时定额 ⭐ 工期管控（P0 待录入）
+├── 05_Processes/    # 施工工艺 ⭐ 高端核心（26 个已录入）
+├── 06_Labor/        # 人工配置 ⭐ 印尼特色（3 个已录入）
+├── 07_WorkHours/    # 工时定额 ⭐ 工期管控（30 个已录入）
 └── 08_Effects/      # 效果矩阵（P1 后自动生成）
 ```
 
@@ -175,6 +176,7 @@ obsidian-vault/
 | 工艺节点 | 26 | ✅ 已录入（AI 生成 + 双语，⚠️ 数字待 Owner 校对 → verified） |
 | 人工节点 | 3 | ✅ 已录入（印尼普工/印尼技工/中国技工，⚠️ 数字待校对） |
 | 工时定额 | 30 | ✅ 已录入（10 工艺 × 3 级人工：8 核心工艺 + 涂装/微水泥，⚠️ 数字待校对） |
+| **本仓库节点合计** | **66** | 26 工艺 + 3 人工 + 30 工时 + 7 材料 |
 | 效果矩阵 | 0 | 🔮 P1 后自动推理生成 |
 
 ---
@@ -205,12 +207,38 @@ obsidian-vault/
 
 ---
 
+## 🧰 工具脚本与文档
+
+**scripts/**（本机运行，无额外依赖，Python 3 自带库 + PyYAML）：
+
+```bash
+# KG 节点 → 结构化 JSON（P1 估价数据源），输出 data/kg_estimate.json
+# 质量门槛：30 个工时节点全覆盖（数值或 N/A），3 个人工节点全部提取日薪，失败退出码 1
+py -3 scripts/export_estimate_data.py
+
+# 刷新 CHECKLIST.md 节点计数
+py -3 scripts/generate_checklist.py
+```
+
+导出产物 `data/kg_estimate.json` 与 `data/style_default_config.json` 以**手动复制**方式快照到 Atelier 仓库 `data/` 下（事实源在本仓库，Atelier 侧不直接改）。
+
+**docs/**：
+
+| 文档 | 说明 |
+| :--- | :--- |
+| `docs/P1_QUICK_ESTIMATE_设计.md` | P1 估价引擎设计稿（6 步管线 + 人工选择硬规则 + 误差验证三级方案） |
+| `docs/M2_敏感性分析报告.md` | 参数敏感度排行（材料价占 73%，waste_factor 最敏感 → 校对优先级依据） |
+| `docs/M4_A级对账报告.md` | A 级对账：quick_estimate vs BOM vs 系数法（15 组矩阵，含数据补全后复跑对比） |
+| `docs/STYLE_DEFAULT_CONFIG_说明.md` | 风格默认配置模板的字段口径 |
+
+---
+
 ## 🗺️ 修订版路线图（P0 → P4）
 
 | 阶段 | 目标 | 状态 |
 | :--- | :--- | :--- |
-| **P0** | 数据录入：5 核心工艺 + 工时定额 + 3 级人工档案（AI 模板生成 + 人工校对） | 🚧 进行中 |
-| **P1** | Atelier 内部估价能力：`quick_estimate` / `precise_estimate` 以库/内部 API 形式落地，验证估价误差 | 📋 待 P0 完成 |
+| **P0** | 数据录入：5 核心工艺 + 工时定额 + 3 级人工档案（AI 模板生成 + 人工校对） | ✅ 最小可用集已录入（实际已超量：26 工艺 + 30 工时 + 3 人工）；⚠️ 数字校对持续中 |
+| **P1** | Atelier 内部估价能力：`quick_estimate` / `precise_estimate` 以库/内部 API 形式落地，验证估价误差 | 🚧 quick_estimate 骨架已完成（Atelier `lib/estimate/` + 7 单元测试全绿 + `/estimate` 内部演示页 noindex）；A 级对账平均偏差 42.2%→34.1%，**未达 25% 验收线**；quick_estimate 验收口径 MAPE≤15%，差距主要来自类目覆盖差异（柜体/门/卫浴/灯具未展开）与 ⚠️ 未校对数据；待办：类目覆盖扩展、数据校对、B 级真实项目回测 |
 | **P2** | 抽离独立 Cloudflare Worker，供 Atelier / IndoScout / Villa 共同调用 | 📋 规划中 |
 | **P3** | MCP 协议薄封装 + 多模态识图 `analyze_design_photo`，仅在出现真实外部接入需求时启动 | 🔮 暂缓 |
 | **P4** | 对外开放订阅 | 🔮 未来 |
@@ -253,7 +281,7 @@ IndoScout-D-B（幕后获客）──破冰话术/预填链接──┐
                                               ▼
 Nusantara-KG-MCP-Server（知识中台）──供能──▶ Nusantara-Atelier（客户前台）
    ▲ 数据事实源                                │
-   └──────── 25案例/231图/51 SKU ◀────────────┘
+   └──────── 25案例/231图/53 SKU ◀────────────┘
                                               ▼
                                      Nusantara-Villa（C端转化）
 ```
